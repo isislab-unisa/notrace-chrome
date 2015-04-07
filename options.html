@@ -1,0 +1,336 @@
+<html>
+<head><title>NoTrace</title></head>
+
+<link rel="stylesheet" href="css/smoothness/jquery-ui-theme.css" />
+<link rel="stylesheet" href="css/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="css/smoothness/jquery-ui.min.css" />
+<link rel="stylesheet" href="css/jquery.treetable.css" />
+<link rel="stylesheet" href="css/jquery.treetable.theme.default.css" />
+<link rel="stylesheet" href="css/screen.css" />
+<link rel="stylesheet" href="css/my.css" />
+
+<script src="js/tech/utilsDb.js"></script>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/jquery.treetable.js"></script>
+
+<body>
+
+<div id="centro">
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1" id="OptionsGeneralSettings_label"><span class="ui-icon"></span></a></li>
+    <li><a href="#tabs-2" id="OptionsLabel14_label"><span class="ui-icon"></span></a></li>
+    <li><a href="#tabs-3" id="OptionsLabel44_label"><span class="ui-icon"></span></a></li>
+	<li><a href="#tabs-4" id="OptionsLabel60_label"><span class="ui-icon"></span></a></li>
+	<li><a href="#tabs-5" id="OptionsLabel51_label"><span class="ui-icon"></span></a></li>
+  </ul>
+  <div id="tabs-1">
+		<div id="tabs1">
+			<ul>
+				<li><a href="#tabs1-1" id="OptionsLabel4_label"></a></li>
+			</ul>
+			<div id="tabs1-1">
+				<fieldset>
+					<legend><span id="OptionsLabel5_label"></span></legend>
+					<table>
+						<tr>
+							<td colspan="2" id="OptionsLabel6_label"></td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="privacy_level" value="1"/><span id="Options_Low"></span></td>
+							<td><span id="Options_Low_desc"></span></td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="privacy_level" value="2"/><span id="Options_Medium"></span></td>
+							<td><span id="Options_Medium_desc"></span></td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="privacy_level" value="3"/><span id="Options_High"></span></td>
+							<td><span id="Options_High_desc"></span></td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="privacy_level" value="4"/><span id="Options_Customized"></span></td>
+							<td><span id="Options_Customized_desc"></span></td>
+						</tr>
+					</table>
+				</fieldset>
+				<br/>
+				<div id="personalizedProtection">
+					<fieldset>
+						<legend> <span id="OptionsLabel7_label"></span></legend>
+						<span id="OptionsLabel8_label"></span><br/><br/>
+						<a href="#" id="switchto1"><img src="/imgs/user24.png"></img></a><br/>
+						<a href="#" id="switchto2"><img src="/imgs/behav24.png"></img></a><br/>
+						<a href="#" id="switchto3"><img src="/imgs/noad24.png"></img></a>
+					</fieldset>
+				</div>
+			</div>
+			<input type="checkbox" name="log" value="log" checked/> Log
+		</div>
+  </div>
+  <div id="tabs-2">
+		<div id="tabs2">
+			<ul>
+				<li><a href="#tabs2-1" id="OptionsLabel9_label"><span class="ui-icon"></span></a></li>
+				<li><a href="#tabs2-2" id="OptionsLabel10_label"><span class="ui-icon"></span></a></li>
+				<li><a href="#tabs2-3" id="OptionsLabel11_label"><span class="ui-icon"></span></a></li>
+			</ul>
+			<div id="tabs2-1">
+				<p id="OptionsLabel15_label"></p>
+				<p id="OptionsLabel16_label"></p>
+				<table>
+					<tr>
+						<td colspan="2" id="OptionsLabel17_label"></td>
+						<td id="OptionsLabel18_label"></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="prefpersonal[]" value="nocookie"></td>
+						<td id="OptionsLabel19_label"></td>
+						<td><a id="prefpersonal-nocookie" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="prefpersonal[]" value="noidheader"></td>
+						<td id="OptionsLabel20_label"></td>
+						<td><a id="prefpersonal-noidheader" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="prefpersonal[]" value="nojscookie"></td>
+						<td id="OptionsLabel21_label"></td>
+						<td><a id="prefpersonal-nojscookie" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="prefpersonal[]" value="nometaredirectandcookie"></td>
+						<td id="OptionsLabel22_label"></td>
+						<td><a id="prefpersonal-nometaredirectandcookie" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="prefpersonal[]" value="noimg"></td>
+						<td id="OptionsLabel24_label"></td>
+						<td><a id="prefpersonal-noimg" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="prefpersonal[]" value="nojs"></td>
+						<td id="OptionsLabel25_label"></td>
+						<td><a id="prefpersonal-nojs" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="prefpersonal[]" value="nonoscript"></td>
+						<td id="OptionsLabel27_label"></td>
+						<td><a id="prefpersonal-nonoscript" href="#"></a></td>
+					</tr>
+				</table>
+			</div>
+			<div id="tabs2-2">
+				<p id="OptionsLabel28_label"></p>
+				<p id="OptionsLabel29_label"></p>
+				<table>
+					<tr>
+						<td colspan="2" id="OptionsLabel17bis_label"></td>
+						<td id="OptionsLabel18bis_label"></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="no3js"></td>
+						<td id="OptionsLabel30_label"></td>
+						<td><a id="preftracking-no3js" href="#"></a></td>
+					</tr> 
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="no3img"></td>
+						<td id="OptionsLabel31_label"></td>
+						<td><a id="preftracking-no3img" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="nowebbug"></td>
+						<td id="OptionsLabel32_label"></td>
+						<td><a id="preftracking-nowebbug" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="no3cookie"></td>
+						<td id="OptionsLabel33_label"></td>
+						<td><a id="preftracking-no3cookie" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="notop"></td>
+						<td id="OptionsLabel34_label"></td>
+						<td><a id="preftracking-notop" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="noflashcookie"></td>
+						<td id="OptionsLabel35_label"></td>
+						<td><a id="preftracking-noflashcookie" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="no3hiddenobj"></td>
+						<td id="OptionsLabel36_label"></td>
+						<td><a id="preftracking-no3hiddenobj" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="noadnetwcookie"></td>
+						<td id="OptionsLabel38_label"></td>
+						<td><a id="preftracking-noadnetwcookie" href="#"></a></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preftracking[]" value="nohtml5storage"></td>
+						<td id="OptionsLabel58_label"></td>
+						<td><a id="preftracking-nohtml5storage" href="#"></a></td>
+					</tr>
+				</table>
+			</div>
+			<div id="tabs2-3">
+				<p id="OptionsLabel39_label"></p>
+				<p id="OptionsLabel40_label"></p>
+				<table>
+					<tr>
+						<td colspan="2" id="OptionsLabel17ter_label"></td>
+						<td id="OptionsLabel18ter_label"></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="prefannoying[]" value="no3pe"></td>
+						<td id="OptionsLabel41_label"></td>
+						<td><a id="prefannoying-no3pe" href="#"></a></td>
+					</tr> 
+					<tr>
+						<td><input type="checkbox" name="prefannoying[]" value="no3objnoid"></td>
+						<td id="OptionsLabel42_label"></td>
+						<td><a id="prefannoying-no3objnoid" href="#"></a></td>
+					</tr> 
+					<tr>
+						<td><input type="checkbox" name="prefannoying[]" value="noad"></td>
+						<td id="OptionsLabel43_label"></td>
+						<td><a id="prefannoying-noad" href="#"></a></td>
+					</tr> 
+					<tr>
+						<td><input type="checkbox" name="prefannoying[]" value="nofingerprinting"></td>
+						<td id="OptionsLabel73_label"></td>
+						<td><a id="prefannoying-nofingerprinting" href="#"></a></td>
+					</tr>
+				</table>
+			</div>
+			<button id="opener">Azzera la lista degli oggetti bloccati</button>
+		</div>
+  </div>
+  <div id="tabs-3">
+		<div id="tabs3">
+			<ul>
+				<li><a href="#tabs3-1" id="OptionsLabel45_label"></a></li>
+			</ul>
+			<div id="tabs3-1">
+				<p id="OptionsLabel46_label"></p>
+				<span id="OptionsLabel47_label"></span><br/>
+				<input type="text" id="whiteListWebSite" /> <input type="button" id="OptionsLabel48_label" value="" />
+				<fieldset>
+					<select id="siti" size="15" multiple>
+					</select>
+					<br/>
+					<input type="button" id="OptionsLabel50_label" value="" />
+				</fieldset>
+			</div>
+		</div>
+  </div>
+  <div id="tabs-4">
+		<div id="tabs4">
+			<ul>
+				<li><a href="#tabs4-1" id="OptionsLabel61_label"></a></li>
+			</ul>
+			<div id="tabs4-1">
+				<fieldset>
+					<img src="/imgs/NoTrace_logo.png">NoTrace</img>
+					<br/>
+					<span id="OptionsLabel61bis_label"></span>
+					<fieldset>
+						<span id="OptionsLabel66_label"></span><br/>
+						<input type="radio" name="formaInvio" value="anonima"><span id="OptionsLabel62_label"></span><br/>
+						<input type="radio" name="formaInvio" value="nonAnonima"><span id="OptionsLabel63_label"></span><br/>
+						<input type="checkbox" name="condividi" value="condividi"><span id="OptionsLabel64_label"></span>
+						<span id="OptionsLabel65_label"></span>
+					</fieldset>
+					<span id="OptionsLabel70_label"></span>
+					<table id="condividiTable" class="treetable">
+						<thead>
+							<tr>
+								<th><span id="OptionsLabel67_label"></span></th>
+								<th><span id="OptionsLabel68_label"></span></th>
+								<th><span id="OptionsLabel69_label"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+						  <tr data-tt-id="1" class="branch collapsed">
+							<td><span class="indenter" style="padding-left: 0px;"></span>Google.com</td>
+							<td></td>
+							<td></td>
+						  </tr>
+						  <tr data-tt-id="1.1" data-tt-parent-id="1" class="leaf" style="display: none;">
+							<td><span class="indenter"></span></td>
+							<td>nocache</td>
+							<td>2</td>
+						  </tr>
+						  <tr data-tt-id="1.2" data-tt-parent-id="1" class="leaf" style="display: none;">
+							<td><span class="indenter"></span></td>
+							<td>noid</td>
+							<td>1</td>
+						  </tr>
+						</tbody>
+					</table>
+				</fieldset>
+			</div>
+		</div>
+  </div>
+  <div id="tabs-5">
+		<div id="tabs5">
+			<ul>
+				<li><a href="#tabs5-1" id="OptionsLabel52_label"></a></li>
+			</ul>
+			<div id="tabs5-1">
+				<fieldset>
+					<img src="/imgs/NoTrace_logo.png"></img>
+					<br/>
+					<fieldset>
+						<span id="appDesc"></span><br/><br/>
+						<span id="OptionsLabel54_label"></span><br/>
+						<a href=""><span id="webSite"></span></a><br/><br/>
+						<span id="OptionsLabel55_label"></span><br/>
+						<span id="author_label"></span><br/><br/>
+						<span id="OptionsLabel56_label"></span><br/>
+						<span id="developer1"></span><br/>
+						<span id="developer2"></span><br/>
+						<span id="developer3"></span><br/>
+						<span id="developer4"></span><br/><br/>
+						<span id="OptionsLabel57_label"></span><br/>
+						<span id="contributor1"></span><br/>
+						<span id="contributor2"></span><br/><br/>
+						<span id="OptionsLabel53_label"></span><br/>
+						<span id="version_label"></span><br/>
+
+					</fieldset>
+				</fieldset>
+			</div>
+		</div>
+  </div>
+</div>
+ 
+<br>
+<div id="status"></div>
+<button id="save">Ok</button>
+</div>
+<div id="dialog" title="Azzera la lista degli oggetti">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Sicuro di voler eliminare tutte le voci?</p>
+</div>
+<div id="dialogLista" title="Lista degli oggetti bloccati">
+	<table id="oggettiTable" class="treetable">
+		<thead>
+			<tr>
+				<th>Indirizzo</th>
+				<th>Risorsa</span></th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>
+
+</body>
+
+<script src="options.js"></script>
+</html>

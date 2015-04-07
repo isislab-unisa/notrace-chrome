@@ -1,0 +1,69 @@
+{
+  "manifest_version": 2,
+
+  "name": "__MSG_OptionsTitle_label__",
+  "description": "__MSG_appDesc__",
+  "version": "2.3",
+  "author": "ISISLab, University of Salerno, Italy",
+  
+  "default_locale": "it",
+  
+  "icons": {
+		"16" : "NoTrace.png",
+		"48" : "NoTrace_logo.png"
+		},
+
+  "browser_action": {
+    "default_icon": "imgs/NoTrace.png",
+    "default_title": "NoTrace"
+  },
+
+  "permissions": [
+    "storage",
+	"tabs",
+	"<all_urls>",
+	"webRequest",
+	"webRequestBlocking"
+  ],
+  
+  "background": {
+    "scripts": [
+		"js/tech/utils.js",
+		"js/tech/utilsDb.js",
+		"js/tech/utilsAbilitazioni.js",
+		"background.js", 
+		"js/tech/noidheader.js",
+		"js/tech/nocookie.js",
+		"js/tech/noimg.js",
+		"js/tech/no3img.js",
+		"js/tech/no3hiddenobj.js",
+		"js/tech/notop.js",
+		"js/tech/noad.js",
+		"js/tech/no3pe.js",
+		"js/tech/no3objnoid.js",
+		"js/tech/nofingerprinting.js",
+		"js/tech/nofingerprintinguseragent.js"
+	]
+  },
+  
+  "content_scripts": [
+    {
+	  "run_at": "document_end",
+      "matches": ["<all_urls>"],
+      "js": [
+		"js/tech/utils.js",
+		"js/tech/utilsDb.js",
+		"js/tech/utilsAbilitazioni.js",
+		"js/jquery-1.9.1.js",
+		"js/tech/nowebbug.js",
+		"js/tech/nojscookie.js",
+		"js/tech/nonoscript.js",
+		"js/tech/nometaredirectandcookie.js",
+		"contentScript.js"
+	  ]
+    }
+  ],
+
+  "options_page": "options.html"
+  
+}

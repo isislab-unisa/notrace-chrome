@@ -1,0 +1,30 @@
+ "content_scripts" : [
+    {
+      "matches" : [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" : ["jquery.min.js","functions.js"],
+      "run_at" : "document_end",
+      "all_frames" : false
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "NoTrace.png",
+    "default_popup": "popup.html"
+  }
+  
+chrome.webRequest.onBeforeRequest.addListener(function(info) {
+	
+		//return {redirectUrl: info.url + "/ciccio"};
+/*
+    chrome.storage.local.get('meta', function (result) {
+        console.log("Ecco la meta:");
+		console.log(result);
+    });
+*/
+  },
+  {urls: [ "<all_urls>" ]},
+  ["blocking"]);
+

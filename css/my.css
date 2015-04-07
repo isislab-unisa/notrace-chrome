@@ -1,0 +1,43 @@
+body { font-size: 10px;}
+span { font-size: 10px;}
+td { font-size: 10px;}
+
+
+#centro { width: 730px; margin:0 auto; padding:0; }
+
+#tabs-1 {padding:0;}
+#tabs-2 {padding:0;}
+#tabs-3 {padding:0;}
+#tabs-4 {padding:0;}
+#tabs-5 {padding:0;}
+
+#tabs .ui-icon { display: inline-block; width:32px; height:32px; }
+
+#OptionsGeneralSettings_label .ui-icon{ background-image: url(/imgs/settings.png); }
+#OptionsLabel14_label .ui-icon{ background-image: url(/imgs/lock.png); }
+#OptionsLabel44_label .ui-icon{ background-image: url(/imgs/lists.png); }
+#OptionsLabel60_label .ui-icon{ background-image: url(/imgs/share.png); }
+#OptionsLabel51_label .ui-icon{ background-image: url(/imgs/help.png); }
+
+#OptionsLabel44_label .ui-icon{ background-image: url(/imgs/lists.png); }
+#OptionsLabel60_label .ui-icon{ background-image: url(/imgs/share.png); }
+#OptionsLabel51_label .ui-icon{ background-image: url(/imgs/help.png); }
+
+#OptionsLabel9_label .ui-icon{ background-image: url(/imgs/user.png); }
+#OptionsLabel10_label .ui-icon{ background-image: url(/imgs/behav.png); }
+#OptionsLabel11_label .ui-icon{ background-image: url(/imgs/noad.png); }
+
+a:link {text-decoration:none; color:#0000FF;}
+a:visited {text-decoration:none; color:#0000FF;}
+a:hover {text-decoration:none; color:#0000FF;}
+a:active {text-decoration:none; color:#0000FF;}
+
+#OptionsLabel53_label {font-weight:bold;}
+#OptionsLabel54_label {font-weight:bold;}
+#OptionsLabel55_label {font-weight:bold;}
+#OptionsLabel56_label {font-weight:bold;}
+#OptionsLabel57_label {font-weight:bold;}
+
+#siti select {
+   width: 268px;
+}
