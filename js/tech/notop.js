@@ -6,9 +6,10 @@ function notop(details){
 	
 	var test = getRegExpDomain().test(domain);	
 	
-	if(test){
+	if(test) {
 		log("STOP NOTOP TRUE: " + details.url);
-	} else {
+	} 
+	else {
 		log("STOP NOTOP FALSE: " + details.url);
 	}
 	return test;

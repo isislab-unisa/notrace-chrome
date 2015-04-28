@@ -19,9 +19,9 @@ function nofingerprinting(details, tabUrl){
 	var regExp2 = getRegExp2();
 	
 	var tempUrl = details.url;
-	if(isno3obj && (regExp1.test(tempUrl) || regExp2.test(tempUrl))){
+	if (isno3obj && (regExp1.test(tempUrl) || regExp2.test(tempUrl))){
 		
-		if(isNofingerprinting()){
+		if (isNofingerprinting()){
 			if (hashOfVisitedLink.hasOwnProperty(tempUrl)) {
 				log("STOP NOFINGERPRINTING CONTINUE: " + details.url);
 				return;

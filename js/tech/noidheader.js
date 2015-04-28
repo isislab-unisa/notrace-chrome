@@ -2,8 +2,8 @@ function noidheader(headers){
 
   log("START NOIDHEADER");
  
-  for( var i = 0, l = headers.length; i < l; ++i ) {
-    if(headers[i].name == 'Host') {
+  for( var i = 0, l = headers.length; i < l; i++ ) {
+    if(headers[i].name == 'Host') { // Attualmente l'header Host non è ancora fornito dalla API WebRequest
 		headers[i].value = "";
 		continue;
 	}

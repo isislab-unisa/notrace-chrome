@@ -7,7 +7,7 @@ function nowebbug(){
 		try{
 			log(this.src);
 			log(this.width + 'x' + this.height);
-			if((this.width==this.height) && (this.width < 3)){
+			if((this.width==this.height) && (this.width < 30000000)){
 				log("STOP NOWEBBUG TRUE: " + this.src);
 				list.push(this.src);
 				this.remove();

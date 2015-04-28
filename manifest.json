@@ -15,15 +15,17 @@
 
   "browser_action": {
     "default_icon": "imgs/NoTrace.png",
-    "default_title": "NoTrace"
+    "default_title": "NoTrace",
+	"default_popup": "options.html"
   },
 
   "permissions": [
+	"*://*/*",
     "storage",
 	"tabs",
-	"<all_urls>",
 	"webRequest",
-	"webRequestBlocking"
+	"webRequestBlocking",
+	"cookies"
   ],
   
   "background": {
@@ -39,6 +41,7 @@
 		"js/tech/no3hiddenobj.js",
 		"js/tech/notop.js",
 		"js/tech/noad.js",
+		"js/tech/nojs.js",
 		"js/tech/no3pe.js",
 		"js/tech/no3objnoid.js",
 		"js/tech/nofingerprinting.js",
@@ -62,8 +65,6 @@
 		"contentScript.js"
 	  ]
     }
-  ],
-
-  "options_page": "options.html"
+	]
   
 }

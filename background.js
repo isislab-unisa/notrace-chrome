@@ -2,112 +2,108 @@
 var inMemoryRequestHeaders = null;
 var tabUrl = null;
 
-/*
-chrome.webRequest.onBeforeRequest.addListener(function(details){
-  console.time(details.url);
-},{urls: [ "<all_urls>" ]},['blocking']);
-
-chrome.webRequest.onCompleted.addListener(function(details){
-  console.timeEnd(details.url);
-},{urls: [ "<all_urls>" ]});
-*/
-
-chrome.webRequest.onBeforeSendHeaders.addListener(function(details){
-
-  log("START ONBEFORE-SEND-HEADERS URL: " + details.url);
+chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
+	
+	var requestHeaders = details.requestHeaders;
+	var redirectTo = nofingerprinting(details, tabUrl);
+	var blockingResponse = {};
+	
+	// Salvo l'URL della pagina, così come viene mostrato nella barra
+	// degli indirizzi del tab dal quale è partita la richiesta.
+	// Mi servirà nel fingerprinting, quando devo vedere se il dominio
+	// della richiesta coincide col dominio della pagina presente nel
+	// tab visualizzato.
+	chrome.tabs.get(details.tabId, function (tab) {
+		tabUrl = tab.url;
+	});
+	
+	/* CONTROLLI PRESENZA URL IN WHITELIST O BLACKLIST */
+	
+	// Controllo se l'URL DELLA RICHIESTA, NON QUELLO DEL TAB, è nella whitelist
+	if (isInWhiteList(getDomainFromUrl(details.url))) {
+		return blockingResponse;
+	} 
+	
+	// Controllo se è in blacklist
+	if (isInBlackList(details.url)) {
+		removeFromBlackList(details.url); // Cancello l'elemento dalla blacklist e...
+		return {cancel: true}; // ...blocco la richiesta
+	}
+	
+	/* CONTROLLO LE TECNICHE APPLICABILI TRA: 
+	/* notop:			filtra le richieste ai top-10 domini di terze parti;
+    /* noad:			rimuove gli oggetti di advertisement;
+	/* no3pe:			filtra le richieste per siti di terze parti
+	/* no3objnoid:		filtra le richieste per siti di terze parti che trasmettono info personali
+	/* no3cookie:		disabilita i cookie di terze parti
+	/* noidheader:		rimuove info personali dall'header, ossia: User-Agent, From, Host, Referer e Cookie
+	/* nofingerprinting:rimuove info identificanti dell'utente dall'URL della richiesta
+	/* nojs:			disabilita l'esecuzione di tutti i codici Javascript
+	*/
+	
+	// La prima funzione controlla se la tecnica è abilitata, la seconda la applica
+	if(isNotop() && notop(details)) {
+		addToBlockedObject("notop", getDomainFromUrl(details.url), details.url);
+		return {cancel: true};
+	}
   
-  // imposto il tabid. La prima richiesta su un nuovo tab aperto può
-  // avere un tabid -1, tuttavia, le risorse richieste avranno il tabid
-  // corretto da cui sarà possibile ottenere l'url della barra degli
-  // indirizzi
-  try{
-	  chrome.tabs.get(details.tabId, function (tab) {
-			if(tab!=null)
-			  tabUrl = tab.url;
-	  });
-  } catch(ex){}
+	if(isNoad() && noad(details)) {
+		addToBlockedObject("noad", getDomainFromUrl(details.url), details.url);
+		return {cancel: true};
+	}
   
-  var requestHeaders = details.requestHeaders, blockingResponse = {};
-
-  // verifico che il dominio a cui sto effettuando la richiesta sia in whitelist
-  if(isInWhiteList(getDomainFromUrl(details.url))){
-    log("DOMAIN IN WHITELIST: " + getDomainFromUrl(details.url));
-    return blockingResponse;
-  } else {
-    log("DOMAIN NOT IN WHITELIST GO ON WITH TECH: " + getDomainFromUrl(details.url));
-  }
-
-  // trovato in blacklist, blocco la richiesta
-  if(isInBlackList(details.url)){
-    // cancello l'elemento dalla blacklist una volta che l'ho bloccato
-    removeFromBlackList(details.url);
-    return {cancel: true};
-  }
+	if(isNo3pe() && no3pe(details, tabUrl)) {
+		addToBlockedObject("no3pe", getDomainFromUrl(details.url), details.url);
+		return {cancel: true};
+	}
   
+	if(isNo3objnoid() && no3objnoid(details)) {
+		addToBlockedObject("no3objnoid", getDomainFromUrl(details.url), details.url);
+		return {cancel: true};
+	}
+	
+	if (redirectTo != null) {
+		return {redirectUrl : redirectTo};
+	}
   
-  if(isNotop() && notop(details)){
-    // blocco la richiesta
-    log("STOP ONBEFORE-SEND-HEADERS ON NOTOP URL: " + details.url);
-	addToBlockedObject("notop", getDomainFromUrl(details.url), details.url);
-    return {cancel: true};
-  }
+	if (isNo3cookie()) {
+		requestHeaders = no3cookie(details, requestHeaders);
+		addToBlockedObject("no3cookie", getDomainFromUrl(details.url), details.url);
+	}
   
-  if(isNoad() && noad(details)){
-    log("STOP ONBEFORE-SEND-HEADERS ON NOAD URL: " + details.url);
-	addToBlockedObject("noad", getDomainFromUrl(details.url), details.url);
-    return {cancel: true};
-  }
+	if (isNoidheader()) {
+		requestHeaders = noidheader(requestHeaders);
+		addToBlockedObject("noidheader", getDomainFromUrl(details.url), details.url);
+	}
   
-  if(isNo3pe() && no3pe(details, tabUrl)){
-    log("STOP ONBEFORE-SEND-HEADERS ON NO3PE URL: " + details.url);
-	addToBlockedObject("no3pe", getDomainFromUrl(details.url), details.url);
-    return {cancel: true};
-  }
+	if (isNofingerprinting()) {
+		requestHeaders = nofingerprintinguseragent(details, tabUrl, requestHeaders);
+		addToBlockedObject("nofingerprinting", getDomainFromUrl(details.url), details.url);
+	}
+	
+	if (isNojs()) { // Non voglio permettere l'esecuzione di codice Javascript, quindi...
+		addToBlockedObject("nojs", getDomainFromUrl(details.url), details.url);
+		var toBlock = nojs(details); // ...toBlock sarà a true se si tratta di una richiesta di uno script, false altrimenti
+		return {cancel: toBlock};
+	}
   
+	// Tengo in memoria i requestHeader, mi serviranno dopo
+	inMemoryRequestHeaders = requestHeaders;
   
-  if(isNo3objnoid() && no3objnoid(details)){
-    log("STOP ONBEFORE-SEND-HEADERS ON NO3OBJNOID URL: " + details.url);
-	addToBlockedObject("no3objnoid", getDomainFromUrl(details.url), details.url);
-    return {cancel: true};
-  }
-
-  var redirectTo = nofingerprinting(details, tabUrl);
-  if(redirectTo != null){
-    log("STOP ONBEFORE-SEND-HEADERS ON REDIRECT URL: " + details.url + " TO: " + redirectTo);
-	return {redirectUrl : redirectTo};
-  }
-  
-  if(isNo3cookie()){
-    requestHeaders = no3cookie(details, requestHeaders);
-	addToBlockedObject("no3cookie", getDomainFromUrl(details.url), details.url);
-  }
-  
-  if(isNoidheader()){
-    requestHeaders = noidheader(requestHeaders);
-	addToBlockedObject("noidheader", getDomainFromUrl(details.url), details.url);
-  }
-  
-  if(isNofingerprinting()){
-    requestHeaders = nofingerprintinguseragent(details, tabUrl, requestHeaders);
-	addToBlockedObject("nofingerprinting", getDomainFromUrl(details.url), details.url);
-  }
-  
-  // Tengo in memoria i requestHeader, mi serviranno dopo
-  inMemoryRequestHeaders = requestHeaders;
-  
-  // restituisco la blocking response
-  blockingResponse.requestHeaders = requestHeaders;
-  log("STOP ONBEFORE-SEND-HEADERS URL: " + details.url);
-  return blockingResponse;
-},
-{urls: [ "<all_urls>" ]},['requestHeaders','blocking']);
+	// restituisco la blocking response
+	blockingResponse.requestHeaders = requestHeaders;
+	return blockingResponse;
+}, 
+{urls: ["<all_urls>"]}, 
+['requestHeaders', 'blocking']
+);
 
 chrome.webRequest.onHeadersReceived.addListener(function(details){
 
   log("START ONHEADERS-RECEIVED URL: " + details.url);
   var responseHeaders = details.responseHeaders, blockingResponse = {};
 
-  if(isNocookie()){
+  if (isNocookie()){
     responseHeaders = nocookie(inMemoryRequestHeaders, responseHeaders);
 	addToBlockedObject("nocookie", getDomainFromUrl(details.url), details.url);
   }
@@ -183,3 +179,5 @@ function show_options() {
 }
 
 chrome.browserAction.onClicked.addListener(show_options);
+		
+		
