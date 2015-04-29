@@ -25,7 +25,8 @@
 	"tabs",
 	"webRequest",
 	"webRequestBlocking",
-	"cookies"
+	"cookies",
+	"contentSettings"
   ],
   
   "background": {
@@ -36,6 +37,7 @@
 		"background.js", 
 		"js/tech/noidheader.js",
 		"js/tech/nocookie.js",
+		"js/tech/no3cookie.js",
 		"js/tech/noimg.js",
 		"js/tech/no3img.js",
 		"js/tech/no3hiddenobj.js",

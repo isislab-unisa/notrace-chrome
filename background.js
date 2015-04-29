@@ -2,6 +2,22 @@
 var inMemoryRequestHeaders = null;
 var tabUrl = null;
 
+/* Per vedere se la tecnica nocookie è abilitata, non facciamo il controllo ogni volta
+/* prima di inviare gli headers, bensì sfruttiamo l'API ContentSettings di Google, in base
+/* alla quale indichiamo una sola volta se vogliamo abilitare o meno i cookie. In particolare
+/* tale preferenza la ricaviamo nel momento in cui l'utente modifica le tecniche da applicare
+/* nella finestra di NoTrace e poi preme Ok per salvare. Il controllo verrà fatto nel file
+/* options.js. Lo script verifica se la casella è spuntata e manda un messaggio al background. */
+chrome.runtime.onMessage.addListener (
+	function (request, sender, sendResponse) {
+		chrome.contentSettings.cookies.set({
+        'primaryPattern': '*://*/*',
+        'setting': request.setting
+		}
+	);
+	}
+);
+
 chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 	
 	var requestHeaders = details.requestHeaders;
@@ -35,10 +51,13 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
     /* noad:			rimuove gli oggetti di advertisement;
 	/* no3pe:			filtra le richieste per siti di terze parti
 	/* no3objnoid:		filtra le richieste per siti di terze parti che trasmettono info personali
-	/* no3cookie:		disabilita i cookie di terze parti
 	/* noidheader:		rimuove info personali dall'header, ossia: User-Agent, From, Host, Referer e Cookie
 	/* nofingerprinting:rimuove info identificanti dell'utente dall'URL della richiesta
 	/* nojs:			disabilita l'esecuzione di tutti i codici Javascript
+	/* no3img:			cancella richieste di immagini verso siti di terze parti
+	/* noimg:			cancella le richieste per qualsiasi immagine
+	/* no3hiddenobj:	rimuove le esecuzioni di Javascript di reti di advertisement
+	/* no3cookie:		rimuove i cookie di terze parti
 	*/
 	
 	// La prima funzione controlla se la tecnica è abilitata, la seconda la applica
@@ -66,11 +85,6 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 		return {redirectUrl : redirectTo};
 	}
   
-	if (isNo3cookie()) {
-		requestHeaders = no3cookie(details, requestHeaders);
-		addToBlockedObject("no3cookie", getDomainFromUrl(details.url), details.url);
-	}
-  
 	if (isNoidheader()) {
 		requestHeaders = noidheader(requestHeaders);
 		addToBlockedObject("noidheader", getDomainFromUrl(details.url), details.url);
@@ -86,12 +100,31 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 		var toBlock = nojs(details); // ...toBlock sarà a true se si tratta di una richiesta di uno script, false altrimenti
 		return {cancel: toBlock};
 	}
+	
+	if(isNo3img() && no3img(details, tabUrl)) { // Cancello le richieste di immagini verso siti di terze parti
+		log("STOP ONHEADERS-RECEIVED NO3IMG URL: " + details.url);
+		addToBlockedObject("no3img", getDomainFromUrl(details.url), details.url);
+		return {cancel: true};
+	}
+	
+	if(isNoimg() && noimg(details)){ // Cancello le richieste di QUALSIASI immagine
+		log("STOP ONHEADERS-RECEIVED NOIMG URL: " + details.url);
+		addToBlockedObject("noimg", getDomainFromUrl(details.url), details.url);
+		return {cancel: true};
+	}
+	
+	if(isNo3hiddenobj() && no3hiddenobj(details)){
+		log("STOP ONHEADERS-RECEIVED NO3HIDDENOBJ URL: " + details.url);
+		addToBlockedObject("no3hiddenobj", getDomainFromUrl(details.url), details.url);
+		return {cancel: true};
+	}
   
 	// Tengo in memoria i requestHeader, mi serviranno dopo
 	inMemoryRequestHeaders = requestHeaders;
   
 	// restituisco la blocking response
 	blockingResponse.requestHeaders = requestHeaders;
+	
 	return blockingResponse;
 }, 
 {urls: ["<all_urls>"]}, 
@@ -102,31 +135,16 @@ chrome.webRequest.onHeadersReceived.addListener(function(details){
 
   log("START ONHEADERS-RECEIVED URL: " + details.url);
   var responseHeaders = details.responseHeaders, blockingResponse = {};
-
-  if (isNocookie()){
-    responseHeaders = nocookie(inMemoryRequestHeaders, responseHeaders);
-	addToBlockedObject("nocookie", getDomainFromUrl(details.url), details.url);
-  }
-
-  if(isNoimg() && noimg(details)){
-    // blocco la richiesta
-    log("STOP ONHEADERS-RECEIVED NOIMG URL: " + details.url);
-	addToBlockedObject("noimg", getDomainFromUrl(details.url), details.url);
-    return {cancel: true};
-  }
-
-  if(isNo3img() && no3img(details, tabUrl)){
-    log("STOP ONHEADERS-RECEIVED NO3IMG URL: " + details.url);
-	addToBlockedObject("no3img", getDomainFromUrl(details.url), details.url);
-    return {cancel: true};
-  }
-
-  if((isNojs() || isNo3hiddenobj()) && no3hiddenobj(details)){
-    log("STOP ONHEADERS-RECEIVED NO3HIDDENOBJ URL: " + details.url);
-	addToBlockedObject("nojs", getDomainFromUrl(details.url), details.url);
-    return {cancel: true};
-  }
   
+	/* CONTROLLO LE TECNICHE APPLICABILI TRA: 
+	/* no3cookie:		rimuove i cookie di terze parti
+	*/
+	
+	if (isNo3cookie()) {
+		responseHeaders = no3cookie(details, responseHeaders, tabUrl);
+		addToBlockedObject("no3cookie", getDomainFromUrl(details.url), details.url);
+	}
+
   // restituisco la blocking response
   blockingResponse.responseHeaders = responseHeaders;
   

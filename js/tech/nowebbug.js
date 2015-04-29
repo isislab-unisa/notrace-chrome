@@ -7,7 +7,7 @@ function nowebbug(){
 		try{
 			log(this.src);
 			log(this.width + 'x' + this.height);
-			if((this.width==this.height) && (this.width < 30000000)){
+			if((this.width==this.height) && (this.width < 3)){ // Stiamo presupponendo che siano quadrate le immagini
 				log("STOP NOWEBBUG TRUE: " + this.src);
 				list.push(this.src);
 				this.remove();

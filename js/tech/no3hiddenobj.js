@@ -6,20 +6,16 @@ function no3hiddenobj(details){
 		return false;
 	}
 	
-	var isHidden=false;
 	var isScriptVer = getArrayOfBlockedScript();
-	var regexp_noHiddenScript=null;
+	var scriptName = getScriptNameFromUrl(details.url);
 
-	for( var i = 0; i < isScriptVer.length; ++i ) {
-		var escaped = escape(isScriptVer[i]);
-		if(new RegExp("\/"+escaped+"[^a-zA-Z]|\/"+escaped+"$").test(location)){
-			// se è attivo anche nojs!!
-			//if(nojs è attivo)
+	for( var i = 0; i < isScriptVer.length; i++ ) {
+		if(new RegExp(isScriptVer[i]).test(scriptName)){
 			log("STOP NO3HIDDENOBJ TRUE: " + details.url);
 			return true;
 		}
+		
 	}
-	
 	log("STOP NO3HIDDENOBJ FALSE: " + details.url);
 	return false;
 }

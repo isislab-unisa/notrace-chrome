@@ -23,6 +23,15 @@ function getDomainFromUrl(url){
     return host;
 }
 
+/* Dato in input un url che fa riferimento ad uno script esterno, la funzione isola 
+/* il nome dello script */
+function getScriptNameFromUrl (url) {
+	var urlPieces = url.split("/");
+	var piecesNumber = urlPieces.length;
+	
+	return urlPieces[piecesNumber - 1];
+}
+
 function cssRegexp(){
 	return new RegExp(".css");
 }

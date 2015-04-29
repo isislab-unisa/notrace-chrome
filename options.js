@@ -21,7 +21,14 @@ function save_options() {
   
   // salvo le impostazioni del log
   localStorage["log"] = $("input[type=checkbox][name='log']").is(':checked');
-
+  
+  if (document.getElementById('checkNoCookie').checked) { // L'utente vuole disabilitare i cookie
+		chrome.runtime.sendMessage({setting: 'block'});
+  }
+  else {
+		chrome.runtime.sendMessage({setting: 'allow'});
+  }
+  
   // Aggiorno lo stato di salvataggio
   var status = document.getElementById("status");
   status.innerHTML = "Options Saved.";

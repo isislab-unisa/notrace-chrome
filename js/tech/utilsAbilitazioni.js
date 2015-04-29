@@ -39,7 +39,7 @@ function isNowebbug(localStorage) {
 }
 
 function isNo3cookie() {
-  return localStorage['preftracking[no3cookie']==='true';
+  return localStorage['preftracking[no3cookie]']==='true';
 }
 
 function isNotop() {

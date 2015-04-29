@@ -1,22 +1,23 @@
-function no3cookie(details, requestHeaders){
-
-	var host = httpChannel.getRequestHeader("Host");
-	var cookie = httpChannel.getResponseHeader("Set-Cookie");
-	var ref = httpChannel.getRequestHeader("Referer");
-
-	if(cookie!=null && ref!=null){
-		var hostsplit = host.split(".");
-		var hsl = hostsplit.length;
-		var objDomain = hostsplit[hsl-2]+"."+hostsplit[hsl-1];
-		var refDomain = this.getDomain(ref);
-
-		if(refDomain!=objDomain){
-			var cResValue=new Array();
-			cResValue=this.getCookieValue(cookie,"Set-Cookie",objDomain,refDomain);	
-			this.checkDBLocalStorage_Cookies(objDomain,refDomain,cResValue);
-			httpChannel.setResponseHeader("Set-Cookie", "", false);
+function no3cookie(details, headers, tabUrl) {
+	var objDomain = getDomainFromUrl(details.url);
+	var refDomain = getDomainFromUrl(tabUrl);
+	var cookiesPositions = [];
+	var toPrint = "";
+	
+	for (i = 0; i < headers.length; i++) {
+		if (headers[i].name == 'Set-Cookie') {
+			cookiesPositions[] = i;
 		}
 	}
+	
+	if (cookieIndexInArray.length > 0) {
+		if (refDomain != objDomain) {
+			for (i = 0, l = cookieIndexInArray.length; i < l; i++) {
+				(headers[cookieIndexInArray[i]]).value = "";
+			}
+		}
+	}
+	return headers;
 }
 
 function getCookieValue (cookieValue,tipologia,host,referer){

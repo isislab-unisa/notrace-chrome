@@ -2,6 +2,7 @@ log("START CONTENTSCRIPT");
 
 chrome.extension.sendRequest({method: "getLocalStorage"}, function(response) {
   var storage = response.data;
+  
   if(isNowebbug(storage)){
     var list = nowebbug();
     chrome.extension.sendRequest({method: "addToBlockedList", type: "nowebbug", list: list});
