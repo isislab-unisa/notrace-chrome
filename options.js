@@ -23,10 +23,17 @@ function save_options() {
   localStorage["log"] = $("input[type=checkbox][name='log']").is(':checked');
   
   if (document.getElementById('checkNoCookie').checked) { // L'utente vuole disabilitare i cookie
-		chrome.runtime.sendMessage({setting: 'block'});
+		chrome.runtime.sendMessage({callerScript: 'options', tech: 'cookie', setting: 'block'});
   }
   else {
-		chrome.runtime.sendMessage({setting: 'allow'});
+		chrome.runtime.sendMessage({callerScript: 'options', tech: 'cookie', setting: 'allow'});
+  }
+  
+  if (document.getElementById('checkNoJS').checked) { // L'utente vuole disabilitare le esecuzioni di TUTTI gli script Javascript
+		chrome.runtime.sendMessage({callerScript: 'options', tech: 'js', setting: 'block'});
+  }
+  else {
+		chrome.runtime.sendMessage({callerScript: 'options', tech: 'js', setting: 'allow'});
   }
   
   // Aggiorno lo stato di salvataggio

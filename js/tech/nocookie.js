@@ -1,10 +1,8 @@
 function nocookie(headers){
- 
-  log("START NOCOOKIE");
   
   var setCookie = null;
   
-  for( var i = 0, l = headers.length; i < l; ++i ) {
+  for( var i = 0, l = headers.length; i < l; i++ ) {
 	if(headers[i].name == 'Set-Cookie' || headers[i].name == 'Cookie') {
 	  
 	  // prendo il cookie per gestire in futuro il local storage della pagina web
@@ -14,6 +12,5 @@ function nocookie(headers){
 	}
   }
   
-  log("STOP NOCOOKIE");
   return headers;
 }

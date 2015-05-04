@@ -11,6 +11,24 @@ function getUrlFromContent(cur_content){
     return null;
 }
 
+// Dato in input un cookie sotto forma di stringa, recupera il dominio del cookie
+function getDomainFromCookie (cookie, tabUrl) {
+	var indexOfDomain = -1;
+	var domain;
+	
+	indexOfDomain = cookie.indexOf('domain=');
+	
+	if (indexOfDomain != -1) { // Se è stato specificato il dominio del cookie
+		domain = ((((cookie.substring(indexOfDomain)).split('='))[1]).split(';'))[0];
+	}
+	
+	else { // Dominio non specificato...
+		domain = getDomainFromUrl(tabUrl); // ...usiamo quello di default (quello della pagina che stiamo visitando)
+	}
+	
+	return domain;
+}
+
 function getDomainFromUrl(url){
     sp = url.split("/");
     var host = sp[2];

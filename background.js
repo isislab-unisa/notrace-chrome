@@ -7,14 +7,33 @@ var tabUrl = null;
 /* alla quale indichiamo una sola volta se vogliamo abilitare o meno i cookie. In particolare
 /* tale preferenza la ricaviamo nel momento in cui l'utente modifica le tecniche da applicare
 /* nella finestra di NoTrace e poi preme Ok per salvare. Il controllo verrà fatto nel file
-/* options.js. Lo script verifica se la casella è spuntata e manda un messaggio al background. */
+/* options.js. Lo script verifica se la casella è spuntata e manda un messaggio al background.
+/* Discorso analogo viene fatto per nojs, che disabilita l'esecuzione di tutti gli script Javascript. */
 chrome.runtime.onMessage.addListener (
 	function (request, sender, sendResponse) {
-		chrome.contentSettings.cookies.set({
-        'primaryPattern': '*://*/*',
-        'setting': request.setting
+		// Innanzitutto dobbiamo vedere da quale script è partito il messaggio,
+		// poichè, in base a questo, possiamo sapere cosa è contenuto in request
+		if (request.callerScript == 'contentScript') {
+			if (request.method == 'metaredirectandcookie') { // Per la tecnica metaredirectandcookie
+				addToBlockedList('nometaredirectandcookie', request.list);
+			}
 		}
-	);
+		else if (request.callerScript == 'options') {
+			if (request.tech == 'cookie') { // L'utente vuole disabilitare tutti i cookie
+				chrome.contentSettings.cookies.set({
+					'primaryPattern': '*://*/*',
+					'setting': request.setting
+				}
+				);
+			}
+			else { // L'utente vuole disabilitare le esecuzioni di tutti gli Javascript
+				chrome.contentSettings.javascript.set({
+					'primaryPattern': '*://*/*',
+					'setting': request.setting
+				}
+				);
+			}
+		}
 	}
 );
 
@@ -47,17 +66,17 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 	}
 	
 	/* CONTROLLO LE TECNICHE APPLICABILI TRA: 
-	/* notop:			filtra le richieste ai top-10 domini di terze parti;
-    /* noad:			rimuove gli oggetti di advertisement;
-	/* no3pe:			filtra le richieste per siti di terze parti
-	/* no3objnoid:		filtra le richieste per siti di terze parti che trasmettono info personali
-	/* noidheader:		rimuove info personali dall'header, ossia: User-Agent, From, Host, Referer e Cookie
-	/* nofingerprinting:rimuove info identificanti dell'utente dall'URL della richiesta
-	/* nojs:			disabilita l'esecuzione di tutti i codici Javascript
-	/* no3img:			cancella richieste di immagini verso siti di terze parti
-	/* noimg:			cancella le richieste per qualsiasi immagine
-	/* no3hiddenobj:	rimuove le esecuzioni di Javascript di reti di advertisement
-	/* no3cookie:		rimuove i cookie di terze parti
+	/* notop:					filtra le richieste ai top-10 domini di terze parti;
+    /* noad:					rimuove gli oggetti di advertisement;
+	/* no3pe:					filtra le richieste per siti di terze parti
+	/* no3objnoid:				filtra le richieste per siti di terze parti che trasmettono info personali
+	/* noidheader:				rimuove info personali dall'header, ossia: User-Agent, From, Host, Referer e Cookie
+	/* nofingerprinting:		rimuove info identificanti dell'utente dall'URL della richiesta
+	/* nojs:					disabilita l'esecuzione di tutti i codici Javascript
+	/* no3img:					cancella richieste di immagini verso siti di terze parti
+	/* noimg:					cancella le richieste per qualsiasi immagine
+	/* no3hiddenobj:			rimuove le esecuzioni di Javascript di reti di advertisement
+	/* no3cookie:				rimuove i cookie di terze parti
 	*/
 	
 	// La prima funzione controlla se la tecnica è abilitata, la seconda la applica
@@ -95,26 +114,17 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 		addToBlockedObject("nofingerprinting", getDomainFromUrl(details.url), details.url);
 	}
 	
-	if (isNojs()) { // Non voglio permettere l'esecuzione di codice Javascript, quindi...
-		addToBlockedObject("nojs", getDomainFromUrl(details.url), details.url);
-		var toBlock = nojs(details); // ...toBlock sarà a true se si tratta di una richiesta di uno script, false altrimenti
-		return {cancel: toBlock};
-	}
-	
 	if(isNo3img() && no3img(details, tabUrl)) { // Cancello le richieste di immagini verso siti di terze parti
-		log("STOP ONHEADERS-RECEIVED NO3IMG URL: " + details.url);
 		addToBlockedObject("no3img", getDomainFromUrl(details.url), details.url);
 		return {cancel: true};
 	}
 	
 	if(isNoimg() && noimg(details)){ // Cancello le richieste di QUALSIASI immagine
-		log("STOP ONHEADERS-RECEIVED NOIMG URL: " + details.url);
 		addToBlockedObject("noimg", getDomainFromUrl(details.url), details.url);
 		return {cancel: true};
 	}
 	
 	if(isNo3hiddenobj() && no3hiddenobj(details)){
-		log("STOP ONHEADERS-RECEIVED NO3HIDDENOBJ URL: " + details.url);
 		addToBlockedObject("no3hiddenobj", getDomainFromUrl(details.url), details.url);
 		return {cancel: true};
 	}

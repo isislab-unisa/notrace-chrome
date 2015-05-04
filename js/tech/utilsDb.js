@@ -19,6 +19,17 @@ function getBlockedObjectSize(type){
   }
 }
 
+// Aggiunge al LocalStorage della tecnica indicata LA LISTA di oggetti passata
+function addToBlockedList (type, list) {
+	// Ricordiamo che ogni elemento della lista è un array di 2 elementi (dominio, oggetto)
+	for (i = 0, l = list.length; i < l; i++) {
+		var domain = list[i][0];
+		var object = list[i][1];
+		
+		addToBlockedObject(type, domain, object);
+	}
+}
+
 function addToBlockedObject(type, domain, object){
   var list;
   var indexOfDomain = -1;

@@ -8,10 +8,11 @@ chrome.extension.sendRequest({method: "getLocalStorage"}, function(response) {
     chrome.extension.sendRequest({method: "addToBlockedList", type: "nowebbug", list: list});
   }
   
-  if(isNometaredirectandcookie(storage)){
-    var list = nometaredirectandcookie();
-	chrome.extension.sendRequest({method: "addToBlackList", list: list});
-	chrome.extension.sendRequest({method: "addToBlockedList", type: "nometaredirectandcookie", list: list});
+  if(isNometaredirectandcookie(storage)) {
+    var list = nometaredirectandcookie(location.href);
+	var metaList = list[0].concat(list[1]);
+	
+	chrome.runtime.sendMessage({callerScript: 'contentScript', method: 'metaredirectandcookie', list: metaList});
   }
   
   if(isNojscookie(storage)){
