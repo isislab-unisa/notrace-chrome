@@ -16,10 +16,15 @@ function getDomainFromCookie (cookie, tabUrl) {
 	var indexOfDomain = -1;
 	var domain;
 	
-	indexOfDomain = cookie.indexOf('domain=');
+	indexOfDomain = cookie.indexOf('domain');
+	
+	while (cookie[indexOfDomain] == ' ' || cookie[indexOfDomain] == '=') {
+		indexOfDomain++;
+	}
 	
 	if (indexOfDomain != -1) { // Se è stato specificato il dominio del cookie
-		domain = ((((cookie.substring(indexOfDomain)).split('='))[1]).split(';'))[0];
+		domain = cookie.substring(indexOfDomain).split('=')[1].split(';')[0];
+		domain = domain.split('"')[0]; // Serve per eliminare eventuali virgolette finali
 	}
 	
 	else { // Dominio non specificato...

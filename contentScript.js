@@ -9,14 +9,14 @@ chrome.extension.sendRequest({method: "getLocalStorage"}, function(response) {
   }
   
   if(isNometaredirectandcookie(storage)) {
-    var list = nometaredirectandcookie(location.href);
+    var list = nometaredirectandcookie(location.href); // L'URL della pagina serve per indicare poi il dominio nella lista dei cookie bloccati
 	var metaList = list[0].concat(list[1]);
 	
 	chrome.runtime.sendMessage({callerScript: 'contentScript', method: 'metaredirectandcookie', list: metaList});
   }
   
   if(isNojscookie(storage)){
-    nojscookie();
+    nojscookie(location.href); // L'URL della pagina serve per indicare poi il dominio nella lista dei cookie bloccati
   }
 
   if(isNonoscript(storage)){

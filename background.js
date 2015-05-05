@@ -9,6 +9,14 @@ var tabUrl = null;
 /* nella finestra di NoTrace e poi preme Ok per salvare. Il controllo verrà fatto nel file
 /* options.js. Lo script verifica se la casella è spuntata e manda un messaggio al background.
 /* Discorso analogo viene fatto per nojs, che disabilita l'esecuzione di tutti gli script Javascript. */
+/* 
+/* TECNICHE TRATTATE:
+/*
+/* nometaredirectandcookie
+/* nocookie
+/* nojs
+/* nojscookie
+*/
 chrome.runtime.onMessage.addListener (
 	function (request, sender, sendResponse) {
 		// Innanzitutto dobbiamo vedere da quale script è partito il messaggio,
@@ -33,6 +41,12 @@ chrome.runtime.onMessage.addListener (
 				}
 				);
 			}
+		}
+		else if (request.callerScript == 'nojscookie') {
+			addToBlockedObject('nojscookie', request.cookieDomain, request.cookie);
+		}
+		else if (request.callerScript == 'no3cookie') {
+			addToBlockedObject('no3cookie', request.cookieDomain, request.cookie);
 		}
 	}
 );
@@ -72,11 +86,11 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 	/* no3objnoid:				filtra le richieste per siti di terze parti che trasmettono info personali
 	/* noidheader:				rimuove info personali dall'header, ossia: User-Agent, From, Host, Referer e Cookie
 	/* nofingerprinting:		rimuove info identificanti dell'utente dall'URL della richiesta
-	/* nojs:					disabilita l'esecuzione di tutti i codici Javascript
 	/* no3img:					cancella richieste di immagini verso siti di terze parti
 	/* noimg:					cancella le richieste per qualsiasi immagine
 	/* no3hiddenobj:			rimuove le esecuzioni di Javascript di reti di advertisement
 	/* no3cookie:				rimuove i cookie di terze parti
+	/* no3js:					disabilita l'esecuzione di tutti i codici Javascript di terze parti
 	*/
 	
 	// La prima funzione controlla se la tecnica è abilitata, la seconda la applica
@@ -128,6 +142,11 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 		addToBlockedObject("no3hiddenobj", getDomainFromUrl(details.url), details.url);
 		return {cancel: true};
 	}
+	
+	if (isNo3js() && no3js(details, tabUrl)) {
+		addToBlockedObject("no3js", getDomainFromUrl(details.url), details.url);
+		return {cancel: true};
+	}
   
 	// Tengo in memoria i requestHeader, mi serviranno dopo
 	inMemoryRequestHeaders = requestHeaders;
@@ -142,8 +161,6 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 );
 
 chrome.webRequest.onHeadersReceived.addListener(function(details){
-
-  log("START ONHEADERS-RECEIVED URL: " + details.url);
   var responseHeaders = details.responseHeaders, blockingResponse = {};
   
 	/* CONTROLLO LE TECNICHE APPLICABILI TRA: 
@@ -151,14 +168,12 @@ chrome.webRequest.onHeadersReceived.addListener(function(details){
 	*/
 	
 	if (isNo3cookie()) {
-		responseHeaders = no3cookie(details, responseHeaders, tabUrl);
-		addToBlockedObject("no3cookie", getDomainFromUrl(details.url), details.url);
+		responseHeaders = no3cookie(details, responseHeaders, location.href);
 	}
 
   // restituisco la blocking response
   blockingResponse.responseHeaders = responseHeaders;
   
-  log("STOP ONHEADERS-RECEIVED URL: " + details.url);
   return blockingResponse;
 },
 {urls: [ "<all_urls>" ]},['responseHeaders','blocking']);

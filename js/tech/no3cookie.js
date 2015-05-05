@@ -1,19 +1,18 @@
 function no3cookie(details, headers, tabUrl) {
 	var objDomain = getDomainFromUrl(details.url);
 	var refDomain = getDomainFromUrl(tabUrl);
-	var cookiesPositions = [];
-	var toPrint = "";
+	var cookiePositions = new Array();
 	
-	for (i = 0; i < headers.length; i++) {
+	for (i = 0, h = headers.length; i < h; i++) {
 		if (headers[i].name == 'Set-Cookie') {
-			cookiesPositions[] = i;
+			cookiePositions.push(i);
 		}
 	}
-	
-	if (cookieIndexInArray.length > 0) {
+	if (cookiePositions.length > 0) {
 		if (refDomain != objDomain) {
-			for (i = 0, l = cookieIndexInArray.length; i < l; i++) {
-				(headers[cookieIndexInArray[i]]).value = "";
+			for (i = 0, l = cookiePositions.length; i < l; i++) {
+				chrome.runtime.sendMessage({callerScript: 'no3cookie', cookieDomain: objDomain, cookie: (headers[cookiePositions[i]]).value});
+				(headers[cookiePositions[i]]).value = "";
 			}
 		}
 	}
