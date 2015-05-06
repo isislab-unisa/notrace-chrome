@@ -26,7 +26,8 @@
 	"webRequest",
 	"webRequestBlocking",
 	"cookies",
-	"contentSettings"
+	"contentSettings",
+	"privacy"
   ],
   
   "background": {
@@ -36,14 +37,12 @@
 		"js/tech/utilsAbilitazioni.js",
 		"background.js", 
 		"js/tech/noidheader.js",
-		"js/tech/nocookie.js",
-		"js/tech/no3cookie.js",
 		"js/tech/noimg.js",
 		"js/tech/no3img.js",
 		"js/tech/no3hiddenobj.js",
 		"js/tech/notop.js",
 		"js/tech/noad.js",
-		"js/tech/nojs.js",
+		"js/tech/noadnetwcookie.js",
 		"js/tech/no3js.js",
 		"js/tech/no3pe.js",
 		"js/tech/no3objnoid.js",

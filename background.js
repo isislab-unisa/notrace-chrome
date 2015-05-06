@@ -16,6 +16,7 @@ var tabUrl = null;
 /* nocookie
 /* nojs
 /* nojscookie
+/* no3cookie
 */
 chrome.runtime.onMessage.addListener (
 	function (request, sender, sendResponse) {
@@ -34,12 +35,15 @@ chrome.runtime.onMessage.addListener (
 				}
 				);
 			}
-			else { // L'utente vuole disabilitare le esecuzioni di tutti gli Javascript
+			else if (request.tech == 'js'){ // L'utente vuole disabilitare le esecuzioni di tutti gli Javascript
 				chrome.contentSettings.javascript.set({
 					'primaryPattern': '*://*/*',
 					'setting': request.setting
 				}
 				);
+			}
+			else if (request.tech == '3cookie') { // L'utente vuole disabilitare i cookie di terze parti
+				chrome.privacy.websites.thirdPartyCookiesAllowed.set({value: Boolean(request.setting)});	
 			}
 		}
 		else if (request.callerScript == 'nojscookie') {
@@ -89,7 +93,6 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
 	/* no3img:					cancella richieste di immagini verso siti di terze parti
 	/* noimg:					cancella le richieste per qualsiasi immagine
 	/* no3hiddenobj:			rimuove le esecuzioni di Javascript di reti di advertisement
-	/* no3cookie:				rimuove i cookie di terze parti
 	/* no3js:					disabilita l'esecuzione di tutti i codici Javascript di terze parti
 	*/
 	
@@ -164,12 +167,13 @@ chrome.webRequest.onHeadersReceived.addListener(function(details){
   var responseHeaders = details.responseHeaders, blockingResponse = {};
   
 	/* CONTROLLO LE TECNICHE APPLICABILI TRA: 
-	/* no3cookie:		rimuove i cookie di terze parti
+	/* noadnetwcookie:	rimuove i cookie settati da ad-networks
 	*/
 	
-	if (isNo3cookie()) {
-		responseHeaders = no3cookie(details, responseHeaders, location.href);
-	}
+	// DA COMPLETARE!
+	/*if (isNoadnetwcookie()) {
+		responseHeaders = noadnetwcookie(responseHeaders);
+	}*/
 
   // restituisco la blocking response
   blockingResponse.responseHeaders = responseHeaders;

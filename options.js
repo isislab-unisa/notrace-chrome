@@ -36,6 +36,13 @@ function save_options() {
 		chrome.runtime.sendMessage({callerScript: 'options', tech: 'js', setting: 'allow'});
   }
   
+  if (document.getElementById('checkNo3Cookie').checked) { // L'utente vuole disabilitare i cookie di terze parti
+		chrome.runtime.sendMessage({callerScript: 'options', tech: '3cookie', setting: ''});
+  }
+  else {
+		chrome.runtime.sendMessage({callerScript: 'options', tech: '3cookie', setting: '1'});
+  }
+  
   // Aggiorno lo stato di salvataggio
   var status = document.getElementById("status");
   status.innerHTML = "Options Saved.";
