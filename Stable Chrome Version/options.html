@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>NoTrace</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/help.css">
+		<link rel="stylesheet" type="text/css" href="css/details.css">
+		<script type="text/javascript" src="js/jquery/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="js/utils/utilsDb.js"></script>
+        <script type="text/javascript" src="js/utils/utils.js"></script>
+	</head>
+	<body>
+        <header>
+			<img id="logo" src="imgs/logo-01.png" alt="NoTrace Logo">
+		</header>
+		
+		<div id="corpo">
+			<div id="parte_superiore">
+				<div id="barra_parte_superiore" class="barra">
+					<h1 id="titolo_barra_superiore" class="titoli_barre_home"></h1>
+				</div>
+				
+				<div id="contenuto_parte_superiore_main" class="contenuto_parte_superiore">
+					<table id="tabella_opzioni_home">
+						<tbody>
+							<tr>
+								<td class="contatore"><p id="tecnica_1" class="link_dettagli_tecniche"></p></td>
+								<td><p id="titolo_tecnica_1" class="titoli_tecniche"></p></td>
+								<td><img id="logo_prima_tecnica" alt="Tracking" src="imgs/tracking-01.png"></td>
+							</tr>
+						
+							<tr>
+								<td class="contatore"><p id="tecnica_2" class="link_dettagli_tecniche"></p></td>
+								<td><p id="titolo_tecnica_2" class="titoli_tecniche"></p></td>
+								<td><img id="logo_seconda_tecnica" alt="Ads" src="imgs/ads-01.png"></td>
+							</tr>
+						
+							<tr>
+								<td colspan="3"><p id="messaggio_home" class="messaggi_home"></p></td>
+							</tr>
+						
+							<tr>
+								<td colspan="3"><p id="messaggio_home_elementi" class="messaggi_home"><span id="elementi_totali_bloccati"></span>&nbsp;</p></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+                <div id="contenuto_parte_superiore_help" class="contenuto_parte_superiore" style="display: none">
+                    <p id="descrizione_app" class="testi_normali_help"></p>
+                    <p id="versione" class="testi_normali_help"><span id="titolo_versione" class="titoli_testi_help"></span></p>
+                    <p class="testi_normali_help"><span id="titolo_sito" class="titoli_testi_help"></span><a id="sito" href="http://www.isislab.it/projects/NoTrace/" target="_blank"></a></p>
+                    <p id="autore" class="testi_normali_help"><span id="titolo_autore" class="titoli_testi_help"></span><br/></p>
+                    <p id="sviluppatori" class="testi_normali_help"><span id="titolo_sviluppatori" class="titoli_testi_help"></span><br/></p>
+				</div>
+				<div id="contenuto_tecnica_1" class="contenuti_tecniche" style="display: none">
+					<table class="tabella_tecniche">
+						<tbody>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_noidheader">
+										<summary id="track_1" class="nomi_opzioni"></summary>
+										<div id="dettagli_track_1" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="preftracking[]" class="onoffswitch-checkbox" value="noidheader" id="noidheader" checked>
+										<label class="onoffswitch-label" for="noidheader">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_no3img">
+										<summary id="track_2" class="nomi_opzioni"></summary>
+										<div id="dettagli_track_2" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="preftracking[]" class="onoffswitch-checkbox" value="no3img" id="no3img" checked>
+										<label class="onoffswitch-label" for="no3img">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_no3cookie">
+										<summary id="track_3" class="nomi_opzioni"></summary>
+										<div id="dettagli_track_3" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="preftracking[]" class="onoffswitch-checkbox" value="no3cookie" id="no3cookie" checked>
+										<label class="onoffswitch-label" for="no3cookie">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_notop">
+										<summary id="track_4" class="nomi_opzioni"></summary>
+										<div id="dettagli_track_4" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="preftracking[]" class="onoffswitch-checkbox" value="notop" id="notop" checked>
+										<label class="onoffswitch-label" for="notop">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_no3objnoid">
+										<summary id="track_5" class="nomi_opzioni"></summary>
+										<div id="dettagli_track_5" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="preftracking[]" class="onoffswitch-checkbox" value="no3objnoid" id="no3objnoid" checked>
+										<label class="onoffswitch-label" for="no3objnoid">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_nofingerprinting">
+										<summary id="track_6" class="nomi_opzioni"></summary>
+										<div id="dettagli_track_6" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="preftracking[]" class="onoffswitch-checkbox" value="nofingerprinting" id="nofingerprinting" checked>
+										<label class="onoffswitch-label" for="nofingerprinting">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="contenuto_tecnica_2" class="contenuti_tecniche" style="display: none">
+					<table class="tabella_tecniche">
+						<tbody>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_no3pe">
+										<summary id="ads_1" class="nomi_opzioni"></summary>
+										<div id="dettagli_ads_1" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="prefannoying[]" class="onoffswitch-checkbox" value="no3pe" id="no3pe" checked>
+										<label class="onoffswitch-label" for="no3pe">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_noadnetwcookie">
+										<summary id="ads_2" class="nomi_opzioni"></summary>
+										<div id="dettagli_ads_2" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="prefannoying[]" class="onoffswitch-checkbox" value="noadnetwcookie" id="noadnetwcookie" checked>
+										<label class="onoffswitch-label" for="noadnetwcookie">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_noad">
+										<summary id="ads_3" class="nomi_opzioni"></summary>
+										<div id="dettagli_ads_3" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="prefannoying[]" class="onoffswitch-checkbox" value="noad" id="noad" checked>
+										<label class="onoffswitch-label" for="noad">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+							<tr class="righe_tecniche">
+								<td>
+									<details id="dettagli_no3hiddenobj">
+										<summary id="ads_4" class="nomi_opzioni"></summary>
+										<div id="dettagli_ads_4" class="contenitori_dettagli">
+										</div>
+									</details>
+								</td>
+								<td class="switch">
+									<div class="onoffswitch">
+										<input type="checkbox" name="prefannoying[]" class="onoffswitch-checkbox" value="no3hiddenobj" id="no3hiddenobj" checked>
+										<label class="onoffswitch-label" for="no3hiddenobj">
+											<span class="onoffswitch-inner"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div id="parte_inferiore">
+				<div id="barra_parte_inferiore" class="barra">
+					<h1 id="titolo_barra_inferiore" class="titoli_barre_home"></h1>
+				</div>
+				
+				<div id="contenuto_parte_inferiore_main" class="contenuto_parte_inferiore">
+					<a href="#"><p id="aggiunta_whitelist"></p></a>
+				</div>
+                <div id="contenuto_parte_inferiore_help" class="contenuto_parte_inferiore" style="display: none">
+                   	<label id="dati_anonimi" for="checkbox_dati_anonimi"><input type="checkbox" id="checkbox_dati_anonimi"><span id="invia_dati_anonimi" class="testi_normali_help"></span></label>
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<table id="pulsanti">
+				<tbody>
+					<tr>
+						<td id="cella_pulsante_sinistro"><button id="pulsante_sinistro" class="pulsante"><p id="testo_pulsante_sospendi"></p></button></td>
+						<td id="cella_pulsante_destro"><button id="pulsante_destro_main" class="pulsante_destro pulsante"><img class="immagine_pulsante" alt="help" src="imgs/help-01.png"></button><button id="pulsante_destro_help" class="pulsante_destro pulsante" style="display: none"><img id="immagine_pulsante_help" class="immagine_pulsante" alt="home" src="imgs/home-01.png"></button></td>
+					</tr>
+				</tbody>
+			</table>
+		</footer>
+        
+        <img id="sospensione" src="imgs/sospensione.png" style="display: none">
+		<script type="text/javascript" src="options.js"></script>
+	</body>
+</html>

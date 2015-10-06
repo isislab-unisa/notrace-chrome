@@ -1,0 +1,12 @@
+<!ENTITY NoTraceHistory.label "NoTrace - History">
+<!ENTITY NoTraceHistoryDescription1.label "Objects retrieved by visited Web pages and grouped by domain.">
+<!ENTITY NoTraceHistoryDescription2.label "Objects grouped by domain.">
+<!ENTITY NoTraceHistoryDescription3.label "For each object it is specified:">
+<!ENTITY NoTraceHistoryDescription4.label "Its location">
+<!ENTITY NoTraceHistoryDescription5.label "The full URL/HTTP Headers">
+<!ENTITY NoTraceHistoryDescription6.label "The feasible techniques that could block it">
+<!ENTITY NoTraceHistoryLocation.label "Location">
+<!ENTITY NoTraceHistoryResource.label "Resource">
+<!ENTITY NoTraceHistoryTechniques.label "Techniques">
+<!ENTITY NoTraceHistoryReset.label "Reset">
+<!ENTITY NoTraceHistoryOK.label "OK">

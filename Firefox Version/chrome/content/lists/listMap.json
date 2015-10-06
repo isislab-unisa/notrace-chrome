@@ -1,0 +1,55 @@
+{
+	"listProperties": {
+		"lists": [
+			{
+				"id": "ad1",
+				"name": "adlist",
+				"lastInstalledVersion": 1.5,
+				"lastAvailable": null,
+				"filePath": "adList"
+			},
+			{
+				"id": "js1",
+				"name": "scriptlist",
+				"lastInstalledVersion": 1.5,
+				"lastAvailable": null,
+				"filePath": "scriptlist"
+			},
+			{
+				"id": "trdp1",
+				"name": "thirdpartylist",
+				"lastInstalledVersion": 1.5,
+				"lastAvailable": null,
+				"filePath": "thirdpartylist"
+			},
+			{
+				"id": "whtl1",
+				"name": "whitelist",
+				"lastInstalledVersion": 1.5,
+				"lastAvailable": null,
+				"filePath": "whitelist"
+			},
+			{
+				"id": "fngp1",
+				"name": "regexp_fingerprinting",
+				"lastInstalledVersion": 1.5,
+				"lastAvailable": null,
+				"filePath": "regexp_fingerprinting"
+			},
+			{
+				"id": "fngpb1",
+				"name": "regexp_fingerprinting_1",
+				"lastInstalledVersion": 1.5,
+				"lastAvailable": null,
+				"filePath": "regexp_fingerprinting_1"
+			},
+			{
+				"id": "cdn1",
+				"name": "arrayOfWhitelistCDN",
+				"lastInstalledVersion": 1.5,
+				"lastAvailable": null,
+				"filePath": "arrayOfWhitelistCDN"
+			}
+		]
+	}
+}

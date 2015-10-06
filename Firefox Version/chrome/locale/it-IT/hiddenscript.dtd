@@ -1,0 +1,4 @@
+<!ENTITY HiddenThirdPartyScripts.label "Script di terze parti pericolosi">
+<!ENTITY ListOfHiddenScripts.label "Elenco degli script pericolosi">
+<!ENTITY ListOfHiddenScriptsLoad.label "Carica">
+<!ENTITY ListOfHiddenScriptsDeleteSelected.label "Cancella Voce">

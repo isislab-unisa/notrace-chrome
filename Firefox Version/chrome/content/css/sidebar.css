@@ -1,0 +1,15 @@
+#notraceaddons-sidebar-close {
+	border: 1px solid transparent;
+	padding: 3px 2px 4px 2px !important;
+	list-style-image: url(../imgs/close.png);
+	-moz-appearance: none;
+	-moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#notraceaddons-sidebar-close:hover {
+	-moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#notraceaddons-sidebar-close:hover:active {
+	-moz-image-region: rect(0px, 48px, 16px, 32px);
+}

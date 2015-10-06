@@ -1,0 +1,1639 @@
+{
+	"OptOut":{
+		"families":{
+			"akamai":{
+				"Acerno":{"state":"false"},
+				"Akamai":{"state":"false"}
+			},
+			"aol":{
+				"Advertising.com":{"state":"false"},
+				"TACODA Audience Networks":{"state":"false"},
+				"Quigo":{"state":"false"}
+			},
+			"famiglia":{
+				"googleFam":{"state":"false"},
+				"yahooFam":{"state":"false"},
+				"microsoftFam":{"state":"false"},
+				"aolFam":{"state":"false"},
+				"valueclickFam":{"state":"false"},
+				"akamaiFam":{"state":"false"},
+				"omnitureFam":{"state":"false"},
+				"otherFam":{"state":"false"}
+			},
+			"google":{
+				"Invite Media":{"state":"false"},
+				"Google.com":{"state":"false"}
+			},
+			"microsoft":{
+				"Microsoft (Atlas Technology)":{"state":"false"},
+				"Mindset Media":{"state":"false"},
+				"Microsoft Advertising":{"state":"false"}
+			},
+			"omniture":{
+				"Mediaplex":{"state":false},
+				"24/7 Real Media":{"state":"false"},
+				"Omniture":{"state":false}
+			},
+			"other":{
+				"Aggregate Knowledge":{"state":"false"},
+				"AlmondNet":{"state":"false"},
+				"AudienceScience":{"state":"false"},
+				"BlueKai":{"state":"false"},
+				"BlueLithium":{"state":"false"},
+				"Burst Media's adConductor":{"state":"false"},
+				"Collective":{"state":"false"},
+				"Criteo":{"state":"false"},
+				"eXelate Media":{"state":"false"},
+				"FetchBack":{"state":"false"},
+				"Fox Audience Network":{"state":"false"},
+				"interCLICK":{"state":"false"},
+				"Lotame":{"state":"false"},
+				"Media6degrees":{"state":"false"},
+				"NextAction":{"state":"false"},
+				"Permuto":{"state":"false"},
+				"Quantcast":{"state":"false"},
+				"richrelevance":{"state":"false"},
+				"Safecount":{"state":"false"},
+				"SpecificMEDIA":{"state":"false"},
+				"Traffic Marketplace":{"state":"false"},
+				"Tumri":{"state":"false"},
+				"Turn":{"state":"false"},
+				"Undertone Networks":{"state":"false"},
+				"[x+1] (formerly Poindexter Systems)":{"state":"false"},
+				"Tribal Fusion":{"state":"false"},
+				"InterCLICK":{"state":"false"},
+				"Zedo (Undertone Networks)":{"state":"false"},
+				"Cossette":{"state":"false"},
+				"Adtech":{"state":"false"},
+				"Bluestreak":{"state":"false"},
+				"Eyeblaster":{"state":"false"},
+				"OpenX":{"state":"false"},
+				"PrecisionClick":{"state":"false"},
+				"Smart Adserver":{"state":"false"},
+				"Nielson":{"state":"false"},
+				"NexTag":{"state":"false"},
+				"Brightroll":{"state":"false"},
+				"BTBuckets":{"state":"false"},
+				"Media Math":{"state":"false"},
+				"Facilitate Digital":{"state":"false"},
+				"Live.com":{"state":"false"},
+				"Right Media":{"state":"false"},
+				"Adbrite":{"state":"false"},
+				"33 Across":{"state":"false"},
+				"Acxiom Relevence-x":{"state":"false"},
+				"AdAdvisor (Targus)":{"state":"false"},
+				"Adify":{"state":"false"},
+				"Adjuggler":{"state":"false"},
+				"Adshuffle":{"state":"false"},
+				"Bizo":{"state":"false"},
+				"Clicktale":{"state":"false"},
+				"E-planning":{"state":"false"},
+				"Effective Measure":{"state":"false"},
+				"Eloqua":{"state":"false"},
+				"Flashtalking":{"state":"false"},
+				"Freewheel":{"state":"false"},
+				"Nugg.ad":{"state":"false"},
+				"Casale":{"state":"false"},
+				"Chitika":{"state":"false"},
+				"Choicestream":{"state":"false"},
+				"Outbrain":{"state":"false"},
+				"Pointroll":{"state":"false"},
+				"Pulse 360":{"state":"false"},
+				"RichRelevance":{"state":"false"},
+				"Rocket Fuel":{"state":"false"},
+				"ScanScout":{"state":"false"},
+				"Tatto Media":{"state":"false"},
+				"Tealium":{"state":"false"},
+				"TradeDoubler":{"state":"false"},
+				"TruEffect":{"state":"false"},
+				"Vizu":{"state":"false"},
+				"Weborama":{"state":"false"},
+				"Burst Media":{"state":"false"},
+				"Snoobi":{"state":"false"},
+				"comScore VoiceFive":{"state":"false"},
+				"Hurra":{"state":"false"},
+				"Coremetrics":{"state":"false"},
+				"EyeWonder":{"state":"false"},
+				"LakeQuincy":{"state":"false"},
+				"WebTrends":{"state":"false"},
+				"DemandMedia":{"state":"false"},
+				"NetMining":{"state":"false"},
+				"Vibrant Medi":{"state":"false"},
+				"YuMe Networks":{"state":"false"},
+				"Adconion":{"state":"false"},
+				"Dotomi":{"state":"false"},
+				"Opinmind":{"state":"false"},
+				"MediaMath":{"state":"false"},
+				"RapLeaf":{"state":"false"},
+				"adAchemi":{"state":"false"},
+				"Dapper":{"state":"false"},
+				"DataXu":{"state":"false"},
+				"Red Aril":{"state":"false"},
+				"Tidal Tv":{"state":"false"},
+				"Wall Street on Demand":{"state":"false"},
+				"XGrapg":{"state":"false"},
+				"I-Behavior":{"state":"false"}
+			},
+			"valueclick":{
+				"ValueClick Media":{"state":"false"}
+			},
+			"yahoo":{
+				"Yahoo! Ad Network":{"state":"false"},
+				"Adinterax (Yahoo)":{"state":"false"}
+			}
+		},
+		"sites":{
+			"24/7 Real Media": {
+				".realmedia.com" : [
+					{
+						"domain":".realmedia.com",
+						"path":"/",
+						"name":"RMOPTOUT",
+						"value":"3",
+						"remove":0
+					}
+				],
+				".247realmedia.com" : [
+					{
+						"domain":".247realmedia.com",
+						"path":"/",
+						"name":"RMOPTOUT",
+						"value":"3",
+						"remove":0
+					}
+				]
+			},
+			"33 Across": {
+				".33across.com" : [
+					{
+						"domain":".33across.com",
+						"path":"/",
+						"name":"33x_nc",
+						"value":"opt-out",
+						"remove":0
+					}
+				]
+			},
+			"Acerno": {
+				".imiclk.com" : [
+					{
+						"domain":".imiclk.com",
+						"path":"/",
+						"name":"IMI",
+						"value":"OPT_OUT",
+						"remove":0
+					},
+					{
+						"domain":".imiclk.com",
+						"path":"/",
+						"name":"OL8U",
+						"value":"0",
+						"remove":0
+					}
+				]
+			},
+			"Acxiom Relevence-x": {
+				".mm7.net" : [
+					{
+						"domain":".mm7.net",
+						"path":"/",
+						"name":"EMX",
+						"value":"VER=6.0&out=1",
+						"remove":0
+					}
+				]
+			},
+			"AdAdvisor (Targus)": {
+				".adadvisor.net" : [
+					{
+						"domain":".adadvisor.net",
+						"path":"/",
+						"name":"id",
+						"value":"opt-out",
+						"remove":0
+					}
+				]
+			},
+			"AdTech": {
+				".adserverwc.adtechus.com" : [
+					{
+						"domain":".adserverwc.adtechus.com",
+						"path":"/",
+						"name":"OptOut",
+						"value":"we will not set any more cookies",
+						"remove":0
+					}
+				],
+				".ad.us-ec.adtechus.com" : [
+					{
+						"domain":".ad.us-ec.adtechus.com",
+						"path":"/",
+						"name":"OptOut",
+						"value":"we will not set any more cookies",
+						"remove":0
+					}
+				]
+			},
+			"Adbrite": {
+				".adbrite.com" : [
+					{
+						"domain":".adbrite.com",
+						"path":"/",
+						"name":"untarget",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Adconion": {
+				".amgdgt.com" : [
+					{
+						"domain":".amgdgt.com",
+						"path":"/",
+						"name":"OO",
+						"value":"OptOut",
+						"remove":0
+					}
+				]
+			},
+			"Adify": {
+				".afy11.net" : [
+					{
+						"domain":".afy11.net",
+						"path":"/",
+						"name":"a",
+						"value":"AAAAAAAAAAAAAAAAAAAAAA",
+						"remove":0
+					}
+				]
+			},
+			"Adinterax (Yahoo)": {
+				".adinterax.com" : [
+					{
+						"domain":".adinterax.com",
+						"path":"/",
+						"name":"adxoptout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Adjuggler": {
+				"rotator.adjuggler.com" : [
+					{
+						"domain":"rotator.adjuggler.com",
+						"path":"/",
+						"name":"aj_optout",
+						"value":"optout",
+						"remove":0
+					}
+				]
+			},
+			"Adshuffle": {
+				".adshuffle.com" : [
+					{
+						"domain":".adshuffle.com",
+						"path":"/",
+						"name":"OptedOut",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Adtech": {
+				".adtech.de" : [
+					{
+						"domain":".adtech.de",
+						"path":"/",
+						"name":"OptOut",
+						"value":"we will not set any more cookies",
+						"remove":0
+					}
+				],
+				".glb.adtechus.com" : [
+					{
+						"domain":".glb.adtechus.com",
+						"path":"/",
+						"name":"OptOut",
+						"value":"we will not set any more cookies",
+						"remove":0
+					}
+				],
+				".adserverec.adtechus.com" : [
+					{
+						"domain":".adserverec.adtechus.com",
+						"path":"/",
+						"name":"OptOut",
+						"value":"we will not set any more cookies",
+						"remove":0
+					}
+				]
+			},
+			"Advertising.com": {
+				".advertising.com" : [
+					{
+						"domain":".advertising.com",
+						"path":"/",
+						"name":"ACID",
+						"value":"optout!",
+						"remove":0
+					}
+				]
+			},
+			"Aggregate Knowledge": {
+				".aggregateknowledge.com" : [
+					{
+						"domain":".aggregateknowledge.com",
+						"path":"/",
+						"name":"uuid",
+						"value":"OPTOUT",
+						"remove":0
+					}
+				]
+			},
+			"Akamai": {
+				".abmr.net" : [
+					{
+						"domain":".abmr.net",
+						"path":"/",
+						"name":"AOOC",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"AlmondNet": {
+				".pro-market.net" : [
+					{
+						"domain":".pro-market.net",
+						"path":"/",
+						"name":"optout",
+						"value":"0+0+0",
+						"remove":0
+					}
+				]
+			},
+			"AudienceScience": {
+				".revsci.net" : [
+					{
+						"domain":".revsci.net",
+						"path":"/",
+						"name":"NETID01",
+						"value":"optout",
+						"remove":0
+					},
+					{
+						"domain":".revsci.net",
+						"path":"/",
+						"name":"NETOPTOUT",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"BTBuckets": {
+				".btbuckets.com" : [
+					{
+						"domain":".btbuckets.com",
+						"path":"/",
+						"name":"optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Bizo": {
+				".bizographics.com" : [
+					{
+						"domain":".bizographics.com",
+						"path":"/",
+						"name":"BizographicsOptOut",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"BlueKai": {
+				".bluekai.com" : [
+					{
+						"domain":".bluekai.com",
+						"path":"/",
+						"name":"BKIgnore",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"BlueLithium": {
+				".adrevolver.com" : [
+					{
+						"domain":".adrevolver.com",
+						"path":"/",
+						"name":"NAI",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"Bluestreak": {
+				".bluestreak.com" : [
+					{
+						"domain":".bluestreak.com",
+						"path":"/",
+						"name":"id",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"Brightroll": {
+				".btrll.com" : [
+					{
+						"domain":".btrll.com",
+						"path":"/",
+						"name":"id",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"Burst Media": {
+				"www.burstnet.com" : [
+					{
+						"domain":"www.burstnet.com",
+						"path":"/",
+						"name":"BOO",
+						"value":"opt-out",
+						"remove":0
+					}
+				]
+			},
+			"Burst Media's adConductor": {
+				".burstnet.com" : [
+					{
+						"domain":".burstnet.com",
+						"path":"/",
+						"name":"BOO",
+						"value":"opt-out",
+						"remove":0
+					}
+				]
+			},
+			"Casale": {
+				".casalemedia.com" : [
+					{
+						"domain":".casalemedia.com",
+						"path":"/",
+						"name":"CMO",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Chitika": {
+				".chitika.net" : [
+					{
+						"domain":".chitika.net",
+						"path":"/",
+						"name":"AO",
+						"value":"o%3D1",
+						"remove":0
+					}
+				]
+			},
+			"Choicestream": {
+				"api.choicestream.com" : [
+					{
+						"domain":"api.choicestream.com",
+						"path":"/",
+						"name":"OptOut",
+						"value":"yes",
+						"remove":0
+					}
+				]
+			},
+			"Clicktale": {
+				".clicktale.net" : [
+					{
+						"domain":".clicktale.net",
+						"path":"/",
+						"name":"WRBlock",
+						"value":"y",
+						"remove":0
+					}
+				]
+			},
+			"Collective": {
+				".collective-media.net" : [
+					{
+						"domain":".collective-media.net",
+						"path":"/",
+						"name":"optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Coremetrics": {
+				"data.cmcore.com" : [
+					{
+						"domain":"data.cmcore.com",
+						"path":"/",
+						"name":"ID",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				],
+				"data.coremetrics.com" : [
+					{
+						"domain":"data.coremetrics.com",
+						"path":"/",
+						"name":"ID",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"Cossette": {
+				".adcentriconline.com" : [
+					{
+						"domain":".adcentriconline.com",
+						"path":"/",
+						"name":"AdcentricOptout",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"Criteo": {
+				".criteo.com" : [
+					{
+						"domain":".criteo.com",
+						"path":"/",
+						"name":"optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Dapper": {
+				".admonkey.dapper.net" : [
+					{
+						"domain":".admonkey.dapper.net",
+						"path":"/",
+						"name":"DAPPEROPTOUT2",
+						"value":"OPT-OUT",
+						"remove":0
+					}
+				]
+			},
+			"DataXu": {
+				".w55c.net" : [
+					{
+						"domain":".w55c.net",
+						"path":"/",
+						"name":"optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"DemandMedia": {
+				"pluckit.demandmedia.com" : [
+					{
+						"domain":"pluckit.demandmedia.com",
+						"path":"/",
+						"name":"anonId",
+						"value":"2aa5f735-6894-4262-92df-0e784dd57723",
+						"remove":0
+					}
+				]
+			},
+			"Dotomi": {
+				".dotomi.com" : [
+					{
+						"domain":".dotomi.com",
+						"path":"/",
+						"name":"DotomiStatus",
+						"value":"5",
+						"remove":0
+					}
+				]
+			},
+			"E-planning": {
+				".ads.us.e-planning.net" : [
+					{
+						"domain":".ads.us.e-planning.net",
+						"path":"/",
+						"name":"US.E-Planning.NET",
+						"value":"OPTOUT",
+						"remove":0
+					}
+				],
+				".ads.e-planning.net" : [
+					{
+						"domain":".ads.e-planning.net",
+						"path":"/",
+						"name":"E-Planning.NET",
+						"value":"OPTOUT",
+						"remove":0
+					}
+				]
+			},
+			"Effective Measure": {
+				".effectivemeasure.net" : [
+					{
+						"domain":".effectivemeasure.net",
+						"path":"/",
+						"name":"_em_opt_out",
+						"value":"1",
+						"remove":0
+					}
+				],
+				".effectivemeasure.com" : [
+					{
+						"domain":".effectivemeasure.com",
+						"path":"/",
+						"name":"_em_opt_out",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Eloqua": {
+				".eloqua.com" : [
+					{
+						"domain":".eloqua.com",
+						"path":"/",
+						"name":"ELOQUA",
+						"value":"GUID=00000000000000000000000000000000",
+						"remove":0
+					}
+				]
+			},
+			"EyeWonder": {
+				".eyewonder.com" : [
+					{
+						"domain":".eyewonder.com",
+						"path":"/",
+						"name":"ew-optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Eyeblaster": {
+				".serving-sys.com" : [
+					{
+						"domain":".serving-sys.com",
+						"path":"/",
+						"name":"ebOptOut",
+						"value":"TRUE",
+						"remove":0
+					}
+				]
+			},
+			"Facilitate Digital": {
+				".adsfac.us" : [
+					{
+						"domain":".adsfac.us",
+						"path":"/",
+						"name":"OO",
+						"value":"OO=1",
+						"remove":0
+					}
+				],
+				".adsfac.eu" : [
+					{
+						"domain":".adsfac.eu",
+						"path":"/",
+						"name":"OO",
+						"value":"OO=1",
+						"remove":0
+					}
+				],
+				".adsfac.net" : [
+					{
+						"domain":".adsfac.net",
+						"path":"/",
+						"name":"OO",
+						"value":"OO=1",
+						"remove":0
+					}
+				],
+				".adsfac.sg" : [
+					{
+						"domain":".adsfac.sg",
+						"path":"/",
+						"name":"OO",
+						"value":"OO=1",
+						"remove":0
+					}
+				]
+			},
+			"FetchBack": {
+				".fetchback.com" : [
+					{
+						"domain":".fetchback.com",
+						"path":"/",
+						"name":"opt",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Flashtalking": {
+				"www.flashtalking.com" : [
+					{
+						"domain":"www.flashtalking.com",
+						"path":"/",
+						"name":"optout",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"Fox Audience Network": {
+				".fimserve.com" : [
+					{
+						"domain":".fimserve.com",
+						"path":"/",
+						"name":"NAI",
+						"value":"1",
+						"remove":0
+					}
+				],
+				".opt.fimserve.com": [
+					{
+						"domain":".opt.fimserve.com",
+						"path":"/",
+						"name":"LO",
+						"value":"",
+						"remove":0
+					}
+				]
+			},
+			"Freewheel": {
+				".fwmrm.net" : [
+					{
+						"domain":".fwmrm.net",
+						"path":"/",
+						"name":"opt_out",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"Google.com": {
+				".doubleclick.net" : [
+					{
+						"domain":".doubleclick.net",
+						"path":"/",
+						"name":"id",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"Hurra": {
+				"hurra.com" : [
+					{
+						"domain":"hurra.com",
+						"path":"/",
+						"name":"__coo",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"I-Behavior": {
+				"optout.ib-ibi.com" : [
+					{
+						"domain":"optout.ib-ibi.com",
+						"path":"/",
+						"name":"ib-ibi.com-OptOut",
+						"value":"IsOptOut=true",
+						"remove":0
+					}
+				]
+			},
+			"InterCLICK": {
+				".a1.interclick.com" : [
+					{
+						"domain":".a1.interclick.com",
+						"path":"/",
+						"name":"Opt",
+						"value":"out",
+						"remove":0
+					}
+				]
+			},
+			"Invite Media": {
+				".invitemedia.com" : [
+					{
+						"domain":".invitemedia.com",
+						"path":"/",
+						"name":"optout",
+						"value":"*",
+						"remove":0
+					}
+				]
+			},
+			"LakeQuincy": {
+				"a.lakequincy.com" : [
+					{
+						"domain":"a.lakequincy.com",
+						"path":"/",
+						"name":"LakeQuincyNetwork",
+						"value":"670a5010-ed8d-473b-894d-8c152020acee",
+						"remove":0
+					}
+				]
+			},
+			"Live.com": {
+				".live.com" : [
+					{
+						"domain":".live.com",
+						"path":"/",
+						"name":"TOptOut",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Lotame": {
+				".crwdcntrl.net" : [
+					{
+						"domain":".crwdcntrl.net",
+						"path":"/",
+						"name":"cc",
+						"value":"optout",
+						"remove":0
+					}
+				]
+			},
+			"Media Math": {
+				".action.mathtag.com" : [
+					{
+						"domain":".action.mathtag.com",
+						"path":"/",
+						"name":"optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Media6degrees": {
+				".media6degrees.com" : [
+					{
+						"domain":".media6degrees.com",
+						"path":"/",
+						"name":"orboptout",
+						"value":"2-1",
+						"remove":0
+					}
+				]
+			},
+			"MediaMath": {
+				".mathtag.com" : [
+					{
+						"domain":".mathtag.com",
+						"path":"/",
+						"name":"optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Mediaplex": {
+				".mediaplex.com" : [
+					{
+						"domain":".mediaplex.com",
+						"path":"/",
+						"name":"svid",
+						"value":"OPT-OUT",
+						"remove":0
+					}
+				]
+			},
+			"Microsoft (Atlas Technology)": {
+				".atdmt.com" : [
+					{
+						"domain":".atdmt.com",
+						"path":"/",
+						"name":"ID",
+						"value":"optout",
+						"remove":0
+					}
+				]
+			},
+			"Microsoft Advertising": {
+				".bing.com" : [
+					{
+						"domain":".bing.com",
+						"path":"/",
+						"name":"TOptOut",
+						"value":"1",
+						"remove":0
+					}
+				],
+				".msn.com" : [
+					{
+						"domain":".msn.com",
+						"path":"/",
+						"name":"TOptOut",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Mindset Media": {
+				".mmismm.com" : [
+					{
+						"domain":".mmismm.com",
+						"path":"/",
+						"name":"G",
+						"value":"-1",
+						"remove":0
+					},
+					{
+						"domain":".mmismm.com",
+						"path":"/",
+						"name":"NSC_xxx",
+						"value":"445239b13660",
+						"remove":0
+					}
+				]
+			},
+			"NetMining": {
+				".netmng.com" : [
+					{
+						"domain":".netmng.com",
+						"path":"/",
+						"name":"EVO5_OPT",
+						"value":"%BC%9F%A5%AF%05%98%88%A39%C1%3C%CC%8EB%B0%FF%FCU%A4f%E8%9B%BA%CA%00t%7E%14%01%C2%03%E8",
+						"remove":0
+					}
+				]
+			},
+			"NexTag": {
+				".nextag.com" : [
+					{
+						"domain":".nextag.com",
+						"path":"/",
+						"name":"ntad",
+						"value":"opt-out",
+						"remove":0
+					}
+				]
+			},
+			"NextAction": {
+				".nexac.com" : [
+					{
+						"domain":".nexac.com",
+						"path":"/",
+						"name":"na_id",
+						"value":"ignore",
+						"remove":0
+					}
+				]
+			},
+			"Nielson": {
+				".imrworldwide.com" : [
+					{
+						"domain":".imrworldwide.com",
+						"path":"/",
+						"name":"OPT_OUT",
+						"value":"TOTAL",
+						"remove":0
+					}
+				]
+			},
+			"Nugg.ad": {
+				".nuggad.net" : [
+					{
+						"domain":".nuggad.net",
+						"path":"/",
+						"name":"nuggstopp",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"Omniture": {
+				".2o7.net" : [
+					{
+						"domain":".2o7.net",
+						"path":"/",
+						"name":"omniture_optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"OpenX": {
+				".openx.net" : [
+					{
+						"domain":".openx.net",
+						"path":"/",
+						"name":"i",
+						"value":"OPT+OUT",
+						"remove":0
+					}
+				]
+			},
+			"Opinmind": {
+				".yieldoptimizer.com" : [
+					{
+						"domain":".yieldoptimizer.com",
+						"path":"/",
+						"name":"om_optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Outbrain": {
+				".outbrain.com" : [
+					{
+						"domain":".outbrain.com",
+						"path":"/",
+						"name":"optout",
+						"value":"",
+						"remove":0
+					}
+				]
+			},
+			"Permuto": {
+				".pulsemgr.com" : [
+					{
+						"domain":".pulsemgr.com",
+						"path":"/",
+						"name":"p",
+						"value":"OPTOUT",
+						"remove":0
+					}
+				]
+			},
+			"Pointroll": {
+				".ads.pointroll.com" : [
+					{
+						"domain":".ads.pointroll.com",
+						"path":"/",
+						"name":"PRID",
+						"value":"CONTENT",
+						"remove":0
+					}
+				]
+			},
+			"PrecisionClick": {
+				".precisionclick.com" : [
+					{
+						"domain":".precisionclick.com",
+						"path":"/",
+						"name":"optout",
+						"value":"1",
+						"remove":0
+					},
+					{
+						"domain":".precisionclick.com",
+						"path":"/",
+						"name":"optoutad",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Pulse 360": {
+				".kanoodle.com" : [
+					{
+						"domain":".kanoodle.com",
+						"path":"/",
+						"name":"kanoodle-opt-out",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Quantcast": {
+				".quantserve.com" : [
+					{
+						"domain":".quantserve.com",
+						"path":"/",
+						"name":"qoo",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"Quigo": {
+				".adsonar.com" : [
+					{
+						"domain":".adsonar.com",
+						"path":"/",
+						"name":"oo_flag",
+						"value":"t",
+						"remove":0
+					}
+				]
+			},
+			"RapLeaf": {
+				".rlcdn.com" : [
+					{
+						"domain":".rlcdn.com",
+						"path":"/",
+						"name":"optout",
+						"value":"Opted Out of RapLeaf Cookies, to re-enable simply delete this cookie.",
+						"remove":0
+					}
+				]
+			},
+			"Red Aril": {
+				".raasnet.com" : [
+					{
+						"domain":".raasnet.com",
+						"path":"/",
+						"name":"o",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"RichRelevance": {
+				"recs.richrelevance.com" : [
+					{
+						"domain":"recs.richrelevance.com",
+						"path":"/",
+						"name":"prooc",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"Right Media": {
+				".ad.yieldmanager.com" : [
+					{
+						"domain":".ad.yieldmanager.com",
+						"path":"/",
+						"name":"optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Rocket Fuel": {
+				".rfihub.com" : [
+					{
+						"domain":".rfihub.com",
+						"path":"/",
+						"name":"a",
+						"value":"cOPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"Safecount": {
+				".questionmarket.com" : [
+					{
+						"domain":".questionmarket.com",
+						"path":"/",
+						"name":"ST",
+						"value":"OPTOUT_",
+						"remove":0
+					}
+				]
+			},
+			"ScanScout": {
+				".scanscout.com" : [
+					{
+						"domain":".scanscout.com",
+						"path":"/",
+						"name":"ENFORCE_PRIVACY",
+						"value":"",
+						"remove":0
+					}
+				]
+			},
+			"Smart Adserver": {
+				".smartadserver.com" : [
+					{
+						"domain":".smartadserver.com",
+						"path":"/",
+						"name":"pid",
+						"value":"Optout",
+						"remove":0
+					}
+				]
+			},
+			"Snoobi": {
+				".snoobi.com" : [
+					{
+						"domain":".snoobi.com",
+						"path":"/",
+						"name":"Snoobi_optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"SpecificMEDIA": {
+				".adviva.net" : [
+					{
+						"domain":".adviva.net",
+						"path":"/",
+						"name":"ADVIVA",
+						"value":"NOTRACK",
+						"remove":0
+					}
+				],
+				".specificmedia.com" : [
+					{
+						"domain":".specificmedia.com",
+						"path":"/",
+						"name":"ADVIVA",
+						"value":"NOTRACK",
+						"remove":0
+					}
+				],
+				".specificclick.net" : [
+					{
+						"domain":".specificclick.net",
+						"path":"/",
+						"name":"ADVIVA",
+						"value":"NOTRACK",
+						"remove":0
+					}
+				]
+			},
+			"TACODA Audience Networks": {
+				".tacoda.net" : [
+					{
+						"domain":".tacoda.net",
+						"path":"/",
+						"name":"TID",
+						"value":"tacodaamoptout",
+						"remove":0
+					}
+				]
+			},
+			"Tatto Media": {
+				"www.tattomedia.com" : [
+					{
+						"domain":"www.tattomedia.com",
+						"path":"/assets/tattomedia/optout/",
+						"name":"na_optout",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Tealium": {
+				"www.tealium.com" : [
+					{
+						"domain":"www.tealium.com",
+						"path":"/",
+						"name":"SM_OPTOUT",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Tidal Tv": {
+				".tidaltv.com" : [
+					{
+						"domain":".tidaltv.com",
+						"path":"/",
+						"name":"opt-out",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"TradeDoubler": {
+				".tradedoubler.com" : [
+					{
+						"domain":".tradedoubler.com",
+						"path":"/",
+						"name":"TD_OPT_OUT",
+						"value":"dummy",
+						"remove":0
+					}
+				]
+			},
+			"Traffic Marketplace": {
+				".trafficmp.com" : [
+					{
+						"domain":".trafficmp.com",
+						"path":"/",
+						"name":"cookiesTest",
+						"value":"true",
+						"remove":0
+					},
+					{
+						"domain":".trafficmp.com",
+						"path":"/",
+						"name":"naiopt",
+						"value":"out",
+						"remove":0
+					}
+				]
+			},
+			"Tribal Fusion": {
+				".tribalfusion.com" : [
+					{
+						"domain":".tribalfusion.com",
+						"path":"/",
+						"name":"ANON_ID",
+						"value":"OptOut",
+						"remove":0
+					}
+				]
+			},
+			"TruEffect": {
+				".adlegend.com" : [
+					{
+						"domain":".adlegend.com",
+						"path":"/",
+						"name":"ID",
+						"value":"OPT-OUT",
+						"remove":0
+					}
+				]
+			},
+			"Tumri": {
+				".tumri.net" : [
+					{
+						"domain":".tumri.net",
+						"path":"/",
+						"name":"t_opt",
+						"value":"OPT-OUT",
+						"remove":0
+					}
+				],
+				".yt1187.net" : [
+					{
+						"domain":".yt1187.net",
+						"path":"/",
+						"name":"t_opt",
+						"value":"OPT-OUT",
+						"remove":0
+					}
+				]
+			},
+			"Turn": {
+				".turn.com" : [
+					{
+						"domain":".turn.com",
+						"path":"/",
+						"name":"optOut",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Undertone Networks": {
+				".ads.undertone.com" : [
+					{
+						"domain":".ads.undertone.com",
+						"path":"/",
+						"name":"UTOPTOUT",
+						"value":"OPTOUT",
+						"remove":0
+					}
+				]
+			},
+			"ValueClick Media": {
+				".fastclick.net" : [
+					{
+						"domain":".fastclick.net",
+						"path":"/",
+						"name":"fastclick",
+						"value":"optout",
+						"remove":0
+					}
+				]
+			},
+			"Vibrant Medi": {
+				".intellitxt.com" : [
+					{
+						"domain":".intellitxt.com",
+						"path":"/",
+						"name":"ITXTCtxtHistOff",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"Vizu": {
+				".vizu.com" : [
+					{
+						"domain":".vizu.com",
+						"path":"/",
+						"name":"opt-out",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"Wall Street on Demand": {
+				"ad.wsod.com" : [
+					{
+						"domain":"ad.wsod.com",
+						"path":"/",
+						"name":"u",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"WebTrends": {
+				"m.webtrends.com" : [
+					{
+						"domain":"m.webtrends.com",
+						"path":"/",
+						"name":"ACOOKIE",
+						"value":"C8ctADc0LjEwNC45OC4xNzQtNDE5NDQ3NjgwLjMwMDY3MTcwAAAAAAAAAAABAAAADQAAALqjp0u6o6dLAQAAABUAAAC6o6dLuqOnSwAAAAA-",
+						"remove":0
+					}
+				]
+			},
+			"Weborama": {
+				".weborama.fr" : [
+					{
+						"domain":".weborama.fr",
+						"path":"/",
+						"name":"AFFICHE_W",
+						"value":"____________",
+						"remove":0
+					}
+				]
+			},
+			"XGrapg": {
+				".xgraph.net" : [
+					{
+						"domain":".xgraph.net",
+						"path":"/",
+						"name":"XG_OPT_OUT",
+						"value":"OPTOUT",
+						"remove":0
+					}
+				]
+			},
+			"Yahoo! Ad Network": {
+				".yahoo.com" : [
+					{
+						"domain":".yahoo.com",
+						"path":"/",
+						"name":"AO",
+						"value":"o=1",
+						"remove":0
+					}
+				]
+			},
+			"YuMe Networks": {
+				".yumenetworks.com" : [
+					{
+						"domain":".yumenetworks.com",
+						"path":"/",
+						"name":"ymoo",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"Zedo (Undertone Networks)": {
+				".zedo.com" : [
+					{
+						"domain":".zedo.com",
+						"path":"/",
+						"name":"ZEDOIDA",
+						"value":"OPT_OUT",
+						"remove":0
+					}
+				]
+			},
+			"[x+1] (formerly Poindexter Systems)": {
+				".edge.ru4.com" : [
+					{
+						"domain":".edge.ru4.com",
+						"path":"/",
+						"name":"ru4.optout",
+						"value":"true",
+						"remove":0
+					}
+				]
+			},
+			"adAchemi": {
+				".adchemy.com" : [
+					{
+						"domain":".adchemy.com",
+						"path":"/",
+						"name":"adc_optout",
+						"value":"opted_out",
+						"remove":0
+					}
+				]
+			},
+			"comScore VoiceFive": {
+				".voicefive.com" : [
+					{
+						"domain":".voicefive.com",
+						"path":"/",
+						"name":"OptOut",
+						"value":"1",
+						"remove":0
+					}
+				]
+			},
+			"eXelate Media": {
+				".load.exelator.com" : [
+					{
+						"domain":".load.exelator.com",
+						"path":"/load/",
+						"name":"DNP",
+						"value":"eXelate+OptOut",
+						"remove":0
+					}
+				],
+				".exelator.com" : [
+					{
+						"domain":".exelator.com",
+						"path":"/",
+						"name":"DNP",
+						"value":"eXelate+OptOut",
+						"remove":0
+					}
+				],
+				".loadan.exelator.com" : [
+					{
+						"domain":".loadan.exelator.com",
+						"path":"/load/",
+						"name":"DNP",
+						"value":"eXelate+OptOut",
+						"remove":0
+					}
+				],
+				".loadan.exelator.net" : [
+					{
+						"domain":".loadan.exelator.net",
+						"path":"/load/",
+						"name":"DNP",
+						"value":"eXelate+OptOut",
+						"remove":0
+					}
+				],
+				".loadxl.exelator.net" : [
+					{
+						"domain":".loadxl.exelator.net",
+						"path":"/load/",
+						"name":"DNP",
+						"value":"eXelate+OptOut",
+						"remove":0
+					}
+				],
+				".loadxl.exelator.com" : [
+					{
+						"domain":".loadxl.exelator.com",
+						"path":"/load/",
+						"name":"DNP",
+						"value":"eXelate+OptOut",
+						"remove":0
+					}
+				],
+				".loadxl.exelator.biz" : [
+					{
+						"domain":".loadxl.exelator.biz",
+						"path":"/load/",
+						"name":"DNP",
+						"value":"eXelate+OptOut",
+						"remove":0
+					}
+				]
+			},
+			"interCLICK": {
+				".interclick.com" : [
+					{
+						"domain":".interclick.com",
+						"path":"/",
+						"name":"Opt",
+						"value":"out",
+						"remove":0
+					}
+				]
+			},
+			"richrelevance": {
+				".recs.richrelevance.com" : [
+					{
+						"domain":".recs.richrelevance.com",
+						"path":"/",
+						"name":"prooc",
+						"value":"true",
+						"remove":0
+					}
+				]
+			}
+		}
+	}
+}
+
+

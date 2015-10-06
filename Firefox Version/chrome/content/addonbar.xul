@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay SYSTEM "chrome://notrace/locale/addonbar.dtd">
+<overlay id="notracescore"
+	 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	 xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<script type="application/x-javascript" src="addonbar.js" />
+	<script type="application/x-javascript" src="sidebar.js" />
+	
+	<statusbar id="addon-bar">
+		<toolbarbutton id="nt-mainButton" type="menu" image="chrome://notrace/content/imgs/NoTrace.png" label="&ToolbarButton.label;" class="toolbarbutton-1" orient="horizontal" dir="normal">
+			<menupopup id="notraceaddons-statusbar-menupopup">
+				<menuitem id="notraceaddons-mpu-options" label="&ControlPanelMenuItem.label;" oncommand="isisNoTrace.openWindowS('chrome://notrace/content/options.xul');"/>
+				<menuitem id="notraceaddons-mpu-show-blocked" label="&ShowBlockedObjects.label;" oncommand="isisNoTraceSideBar.openSidebar();"/>
+				<menuitem id="notraceaddons-mpu-show-history" label="&ShowHistory.label;" oncommand="isisNoTrace.openWindow('chrome://notrace/content/history.xul');"></menuitem>
+				<menuitem id="notraceaddons-mpu-show-sensitiveInfo" label="&UserAwareness.label;" oncommand="isisNoTrace.openWindowSensitiveInfo('chrome://notrace/content/awareness.xul');"></menuitem>
+				<menuitem id="notraceaddons-mpu-show-rebuildProfile" label="&RebuildProfile.label;" oncommand="isisNoTrace.openWindowRebuildProfile('chrome://notrace/content/rebuildprofile.xul');"></menuitem>
+				<menuseparator id="notraceaddons-mpu-separator"/>
+			</menupopup>
+		</toolbarbutton>
+		<box style="display:none;">
+			<label id="notraceaddons-notraceprot" value="_"/>
+		</box>
+	</statusbar>
+	
+</overlay>

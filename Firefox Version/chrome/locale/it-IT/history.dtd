@@ -1,0 +1,12 @@
+<!ENTITY NoTraceHistory.label "NoTrace - History">
+<!ENTITY NoTraceHistoryDescription1.label "Oggetti delle pagine Web visitate.">
+<!ENTITY NoTraceHistoryDescription2.label "Gli oggetti sono raggruppati per dominio.">
+<!ENTITY NoTraceHistoryDescription3.label "Per ogni oggetto sono specificati: ">
+<!ENTITY NoTraceHistoryDescription4.label "Indirizzo">
+<!ENTITY NoTraceHistoryDescription5.label "Header HTTP">
+<!ENTITY NoTraceHistoryDescription6.label "Tipo di pericolo">
+<!ENTITY NoTraceHistoryLocation.label "Indirizzo">
+<!ENTITY NoTraceHistoryResource.label "Risorsa">
+<!ENTITY NoTraceHistoryTechniques.label "Tecnica">
+<!ENTITY NoTraceHistoryReset.label "Reset">
+<!ENTITY NoTraceHistoryOK.label "OK">

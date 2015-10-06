@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://notrace/locale/awareness.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<?xul-overlay href="chrome://notrace/content/awarenessListOverlay.xul"?>
+
+<window title="&NoTraceSensitiveInfo.label;"
+		windowtype="global:notracesensitiveinfo"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		align="right"
+		onload="isisNoTrace.load();"
+		onfocus="isisNoTrace.refresh();"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<script type="application/x-javascript" src="awareness.js"/>
+	
+	<groupbox id="descr_box" width="700" height="270px" style="margin-top:10px;">
+			<description>
+				<html:span style="font-weight:bold;text-align:justify">
+					&NoTraceSensitiveInfoHeader.label;
+				</html:span>
+				
+				<html:p style="text-align:justify">
+					&NoTraceSensitiveDesc.label;
+				</html:p>
+				
+				<html:h3>
+					<image id="imageId" src="" style="padding-left:10px;"/>	
+					<label id="host" value="" style="padding-left:8px;font-size:115%;"/>
+					<label id="awarenessInfoFound" style="margin-left:60px;padding-left:60px;" value=""/>
+					<!--<label id="awarenessInfoFound" class="text-link" style="text-decoration:underline;color:blue;margin-left:60px;padding-left:60px;" value="" onclick="isisNoTrace.openDialogAwareness();"/>-->
+				</html:h3>
+				
+								
+				<html:ul>
+						<html:table width="670" height="150">
+						  <html:td width="180">
+							<html:tr>
+								<html:td><html:li>&NoTraceSensitiveInfoDescription2.label;</html:li></html:td>
+								<html:td><label id="a1" class="text-link" style="text-decoration:underline;color:blue;margin-left:30px" value="0" onclick="isisNoTrace.openDialogReferer();"/></html:td>
+							</html:tr>
+							<html:tr>
+								<html:td><html:li>&NoTraceSensitiveInfoDescription3.label;</html:li></html:td>
+								<html:td><label id="a2" class="text-link" style="text-decoration:underline;color:blue;margin-left:30px" value="0" onclick="isisNoTrace.openDialogCookie();"/></html:td>
+							</html:tr>
+							<html:tr>
+								<html:td><html:li>&NoTraceSensitiveInfoDescription4.label;</html:li></html:td>
+								<html:td><label id="a3" class="text-link" style="text-decoration:underline;color:blue;margin-left:30px" value="0" onclick="isisNoTrace.openDialogThirdCookie();"/></html:td>
+							</html:tr>
+							<html:tr>
+								<html:td><html:li>&NoTraceSensitiveInfoDescription5.label;</html:li></html:td>
+								<html:td><label id="a4" class="text-link" style="text-decoration:underline;color:blue;margin-left:30px" value="0" onclick="isisNoTrace.openDialogThirdWebSite();"/></html:td>
+							</html:tr>
+							<html:tr>
+								<html:td><html:li>&NoTraceSensitiveInfoDescription6.label;</html:li></html:td>
+								<html:td><label id="a5" class="text-link" style="text-decoration:underline;color:blue;margin-left:30px" value="0" onclick="isisNoTrace.openDialogWebBug();"/></html:td>
+							</html:tr>
+							<!--<html:tr>
+								<html:td><html:li>&NoTraceSensitiveInfoDescription7.label;</html:li></html:td>
+								<html:td><label id="a6" class="text-link" style="text-decoration:underline;color:blue;margin-left:30px" value="0" onclick="isisNoTrace.openDialogFlashCookie();"/></html:td>
+							</html:tr>-->
+							<html:tr>
+								<html:td><html:li>&NoTraceSensitiveInfoDescription8.label;</html:li></html:td>
+								<html:td><label id="a7" class="text-link" style="text-decoration:underline;color:blue;margin-left:30px" value="0" onclick="isisNoTrace.openDialogThirdImage();"/></html:td>
+							</html:tr>
+						  </html:td>
+						  
+						  <html:td width="500">
+								<vbox id="hiddenAwareness-group" style="display:none;" flex="1">
+									<hbox>          
+										<tree id="awarenessTree" flex="1" rows="8">
+											<treecols>
+												<treecol id="infoLeaked" label="&NoTraceSensitiveInfoNameLeaked.label;" flex="6" primary="true"/>
+												<splitter class="tree-splitter"/>
+												<treecol id="valueLeaked" label="&NoTraceSensitiveInfoValueLeaked.label;" flex="6"/>
+												<splitter class="tree-splitter"/>
+												<treecol id="categoryLeaked" label="&NoTraceSensitiveCategory.label;" flex="4"/>
+											</treecols>
+											<treechildren id="childreeenAwareness"></treechildren>
+										</tree>
+									</hbox>
+								</vbox>
+						  </html:td>	
+						  
+						</html:table>
+					</html:ul>
+					<html:br/>
+				</description>
+				
+				<vbox id="notrace-hiddenInfo-group" style="display:none;" flex="1"></vbox>
+				
+	</groupbox>
+	
+	<box align="end">
+		<button label="&NoTraceSensitiveInfoReset.label;" oncommand="isisNoTrace.deleteDB();"/>
+		<button label="&NoTraceSensitiveInfoOK.label;" oncommand="window.close();"/>
+	</box>
+	
+</window>

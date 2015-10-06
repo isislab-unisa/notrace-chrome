@@ -1,0 +1,6 @@
+<!ENTITY NoTraceObjectsTitle.label "Informazioni sugli oggetti">
+<!ENTITY NoTraceObjectsDescription1.label "Oggetti che possono essere bloccati da: ">
+<!ENTITY NoTraceObjectsDescription2.label "Gli oggetti sono raggruppati in base al dominio di appartenenza.">
+<!ENTITY NoTraceObjectsLocation.label "Indirizzo">
+<!ENTITY NoTraceObjectsResource.label "Risorsa">
+<!ENTITY NoTraceObjectsOK.label "OK">

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<window>
+<overlay id="notracescore"
+	 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	 xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<script type="application/x-javascript" src="addonbar.js" />
+	<script type="application/x-javascript" src="sidebar.js" />
+
+	<label> Ciao</label>
+	
+</overlay>
+</window>

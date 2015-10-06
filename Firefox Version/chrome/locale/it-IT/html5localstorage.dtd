@@ -1,0 +1,12 @@
+<!ENTITY NoTraceHTML5.label "NoTrace - HTML5 Local Storage">
+<!ENTITY NoTraceHTML5Description1.label "Sotto sono riportati tutti i dati memorizzati nel local storage dalle applicazioni web che usi.">
+<!ENTITY NoTraceHTML5Description2.label "I dati sono raggrupati per dominio">
+<!ENTITY NoTraceHTML5Description3.label "I dati sono raggrupati per dominio">
+<!ENTITY NoTraceHTML5Description4.label "I dati sono raggrupati per dominio">
+<!ENTITY NoTraceHTML5Description5.label "Doppio click per visualizzare i dati e altri dettagli">
+<!ENTITY NoTraceHTML5Location.label "Dominio">
+<!ENTITY NoTraceHTML5Resource.label "Chiave">
+<!ENTITY NoTraceHTML5Techniques.label "Valore">
+<!ENTITY NoTraceHTML5Reset.label "Cancella tutti">
+<!ENTITY NoTraceHTML5DeleteSingle.label "Cancella elemento">
+<!ENTITY NoTraceHTML5OK.label "OK">

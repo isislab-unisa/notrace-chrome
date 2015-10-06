@@ -1,0 +1,6 @@
+<!ENTITY AdvertsList.label "Elenco degli filtri aggiuntivi">
+<!ENTITY Listofitemstofilterout.label "Filtri      ">
+<!ENTITY EnterCustomRegexp.label "Aggiungi un nuovo filtro: ">
+<!ENTITY SendUsCustomRegexps.label "Mandaci i tuoi filtri">
+<!ENTITY LoadAdList.label "Aggiungi">
+<!ENTITY CloseAdList.label "Rimuovi">

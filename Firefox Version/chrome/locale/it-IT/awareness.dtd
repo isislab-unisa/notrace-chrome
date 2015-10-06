@@ -1,0 +1,19 @@
+<!ENTITY NoTraceSensitiveInfo.label "NoTrace  - Awareness">
+<!ENTITY NoTraceSensitiveInfoDescription1.label "Questa pagina Web contiene:">
+<!ENTITY NoTraceSensitiveInfoDescription2.label "Referer">
+<!ENTITY NoTraceSensitiveInfoDescription3.label "Cookie">
+<!ENTITY NoTraceSensitiveInfoDescription4.label "Cookie di terze parti">
+<!ENTITY NoTraceSensitiveInfoDescription5.label "Richieste per siti di terze parti">
+<!ENTITY NoTraceSensitiveInfoDescription6.label "Immagini invisibili (1x1)">
+<!ENTITY NoTraceSensitiveInfoDescription7.label "Flash cookie">
+<!ENTITY NoTraceSensitiveInfoDescription8.label "Immagini di terze parti">
+<!ENTITY NoTraceSensitiveInfoLocation.label "Indirizzo">
+<!ENTITY NoTraceSensitiveInfoValue.label "Valore">
+<!ENTITY NoTraceSensitiveInfoNameLeaked.label "Informazioni">
+<!ENTITY NoTraceSensitiveInfoValueLeaked.label "Valore">
+<!ENTITY NoTraceSensitiveCategory.label "Categoria">
+<!ENTITY NoTraceSensitiveInfoReset.label "Cancella">
+<!ENTITY NoTraceSensitiveInfoOK.label "OK">
+<!ENTITY NoTraceSensitiveInfoHeader.label "Informazioni circa i dati divulgati relativamente alla corrente pagina Web visitata">
+<!ENTITY NoTraceSensitiveDesc.label "In questa sezione potrai vedere quali dati personali sono stati raccolti sulla pagina Web da te visitata e divulgati a siti di terze parti o alle grandi agenzie e compagnie pubblicitarie.
+Il numero di minacce scoperte ed i dettagli circa le tue infomazioni personali sono mostrate di seguito.">

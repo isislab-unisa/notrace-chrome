@@ -1,0 +1,85 @@
+treechildren::-moz-tree-checkbox
+{
+  /* unchecked checkbox treecells. This style MUST come before treechildren::-moz-tree-checkbox(checked) otherwise it won't take effect. */
+  list-style-image: url(../imgs/disab.gif);
+  /*list-style-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif");*/
+  /*list-style-image: url("chrome://global/skin/icons/images/close-button.jpg");*/
+}
+treechildren::-moz-tree-checkbox(checked)
+{
+  /* checked checkbox treecells. cbox-check.gif isn't available in
+     Firefox 1, 2, and 3 in Mac OS X so you should specify a URL to an image
+     in your extension or elsewhere. */
+  /*list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");*/
+  list-style-image: url(../imgs/spunta.gif);
+}
+treechildren::-moz-tree-checkbox(disabled)
+{
+  /* disabled checkbox treecells. cbox-check.gif isn't available in
+     Firefox 1, 2, and 3 in Mac OS X, so you should specify a URL to an image
+     in your extension or elsewhere. */
+  list-style-image: url(../imgs/disab.gif);
+  /*list-style-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif");*/
+}
+
+.desc {
+	padding-bottom:3px;
+	padding-top:3px;
+}
+
+.descRadio {
+	padding-bottom:7px;
+	padding-top:7px;
+}
+
+.box_desc{
+	width: 400px;
+}
+
+#desc_medium {
+	padding-top: 8px;
+	padding-bottom: 0px;
+}
+
+#desc_hight {
+	padding-top: 5px;
+}
+
+.titleh1{
+	font-size:3em;
+}
+
+.boldh2{
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.boldh1{
+	font-weight: bold;
+	margin-top: 18px;
+}
+
+.marginleft20 {
+	margin-left: 10px;
+}
+
+.descriptionText {
+	white-space: normal;
+	width: 45em;
+}
+
+.width_dialog {
+	width: 330px;
+}
+
+.width_tree {
+	width: 300px;
+}
+
+.nopad_nomarg{
+	padding:0;
+	margin:0;
+}
+
+.padded_from_top {
+}

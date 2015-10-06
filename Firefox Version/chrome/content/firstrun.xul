@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE dialog SYSTEM "chrome://notrace/locale/firstrun.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://global/skin/firstrun.css" type="text/css"?>
+
+<dialog id="myDialog" title="&FirstRun.title;"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="window.centerWindowOnScreen()"
+        buttons="accept,cancel"
+        buttonlabelaccept="Select"
+        buttonaccesskeyaccept="S"
+        ondialogaccept="doSave();"
+        buttonlabelcancel="Cancel"
+        buttonaccesskeycancel="n"
+        ondialogcancel="return doCancel();">
+		
+	<script type="application/x-javascript" src="firstrun.js"/>
+	<hbox>
+		<dialogheader title="&FirstRunTitle.title;" description="&FirstRunTitle.description;"/>
+		<image height="50%" width="50%" src="imgs/Mozzilla_Firefox.png" align="left"/>
+	</hbox>
+  
+	<groupbox flex="1">
+		<caption label="&FirstRunCaption.title;" style="color:black;font-weight:bold;"/>
+		<description>&FirstRunDescription.empty;</description>
+		<radiogroup>
+			<description>&FirstRunDescription.empty;</description>
+			<radio id="5" value="5" label="&FirstRunRadio.Manual;" style="color:black;font-weight:bold;"/>
+			<description>&FirstRunDescription.empty;</description>
+			<radio id="1" value="1" label="&FirstRunRadio.Low;" style="color:red;font-weight:bold;"/>
+			<description>&FirstRunDescription.empty;</description>
+			<radio id="2" value="2" selected="true" label="&FirstRunRadio.Medium;" style="color:orange;font-weight:bold;"/>
+			<description>&FirstRunDescription.empty;</description>
+			<radio id="3" value="3" label="&FirstRunRadio.High;" style="color:green;font-weight:bold;"/>
+			<description>&FirstRunDescription.empty;</description>
+			<radio id="4" value="4" label="&FirstRunRadio.Auto;" style="color:blue;font-weight:bold;" />
+			<description>&FirstRunDescription.empty;</description>
+		</radiogroup>
+		<description>&FirstRunDescription.empty;</description>
+		<description>&FirstRunDescription.empty;</description>
+	</groupbox>
+</dialog>

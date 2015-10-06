@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>notrace@unisa.it</em:id>
+    <em:version>2.4.1</em:version>
+    <em:type>2</em:type>
+	<em:unpack>false</em:unpack>
+   
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>4.0</em:minVersion>
+		<em:maxVersion>28.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+   
+    <em:name>NoTrace</em:name>
+    <em:description>How to limit the diffusion of personally identifiable information and protect users's privacy against Web tracking and other dangerous privacy threats </em:description>
+	<em:creator>ISISLab, University of Salerno, Italy</em:creator>
+    <em:developer>Daniele Zirpoli </em:developer>
+	<em:developer>Delfina Malandrino </em:developer>
+	<em:developer>Raffaele Spinelli </em:developer>
+	<em:developer>Francesco Isernia </em:developer>
+	<em:contributor>Roberto Andreoli</em:contributor>
+	<em:contributor>Antonio Bruno</em:contributor>
+	<em:homepageURL>http://www.isislab.it/projects/NoTrace/</em:homepageURL>
+    <em:optionsURL>chrome://notrace/content/options.xul</em:optionsURL>
+	<em:iconURL>chrome://notrace/content/imgs/NoTrace_logo.png</em:iconURL>
+  </Description>
+</RDF>

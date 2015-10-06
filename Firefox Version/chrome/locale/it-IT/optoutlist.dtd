@@ -1,0 +1,23 @@
+<!ENTITY OptOutListCaption.label "Opt-Out List (Clicca su 'opt-out state')">
+<!ENTITY OptOutListDomain.label "Dominio">
+<!ENTITY OptOutListOptOutState.label "Opt-Out State">
+<!ENTITY OptOutListItem1.label "Google Family">
+<!ENTITY OptOutListItem2.label "AOL Family">
+<!ENTITY OptOutListItem3.label "Yahoo Family">
+<!ENTITY OptOutListItem4.label "Microsoft Family">
+<!ENTITY OptOutListItem5.label "Valueclick Family">
+<!ENTITY OptOutListItem6.label "Akamai Family">
+<!ENTITY OptOutListItem7.label "Omniture Family">
+<!ENTITY OptOutListItem8.label "Altre Families">
+<!ENTITY OptOutListItemValue1.label "googleFam">
+<!ENTITY OptOutListItemValue2.label "aolFam">
+<!ENTITY OptOutListItemValue3.label "yahooFam">
+<!ENTITY OptOutListItemValue4.label "microsoftFam">
+<!ENTITY OptOutListItemValue5.label "valueclickFam">
+<!ENTITY OptOutListItemValue6.label "akamaiFam">
+<!ENTITY OptOutListItemValue7.label "omnitureFam">
+<!ENTITY OptOutListItemValue8.label "otherFam">
+<!ENTITY OptOutListSelectAll.label "Seleziona Tutti">
+<!ENTITY OptOutListClear.label "Reset">
+<!ENTITY OptOutListTotal.label "Totale: ">
+<!ENTITY OptOutListOptedOut.label "Opted Out: ">

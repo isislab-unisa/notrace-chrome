@@ -1,0 +1,6 @@
+<!ENTITY NoTraceObjectsTitle.label "Objects Information">
+<!ENTITY NoTraceObjectsDescription1.label "Objects that can be blocked by enabling: ">
+<!ENTITY NoTraceObjectsDescription2.label "Objects grouped by domain.">
+<!ENTITY NoTraceObjectsLocation.label "Location">
+<!ENTITY NoTraceObjectsResource.label "Resource">
+<!ENTITY NoTraceObjectsOK.label "OK">

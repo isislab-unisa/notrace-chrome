@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://notrace/locale/html5localstorage.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<window title="&NoTraceHTML5.label;"
+		windowtype="global:notracehtml5"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		align="left"
+		onload="isisNoTrace.createTreeHTML5();isisNoTrace.setTreeSize();"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<script type="application/x-javascript" src="html5localstorage.js" />
+
+	<groupbox id="notraceaddons-descr_box" align="left" style="margin-top:10px;margin-left:10px;">
+		<description>
+			<description>&NoTraceHTML5Description1.label;</description>
+			<!--<description>&NoTraceHTML5Description2.label;</description>
+			<description>&NoTraceHTML5Description3.label;</description>-->
+			<html:ul style="margin:0px;">
+				<html:li>&NoTraceHTML5Description4.label;</html:li>
+				<html:li>&NoTraceHTML5Description5.label;</html:li>
+				<!--<html:li>&NoTraceHTML5Description6.label;</html:li>-->
+			</html:ul>
+		</description>
+	</groupbox>
+	
+	<tree id="notraceaddons-html5tree" flex="1" style="margin:0px;" ondblclick="isisNoTrace.dettagli();" onclick="isisNoTrace.deleteSingle()">
+		<treecols>
+			<treecol id="notraceaddons-requestOrigin" label="&NoTraceHTML5Location.label;" flex="2" primary="true"/>
+			<splitter class="tree-splitter"/>
+			<treecol id="notraceaddons-resource" label="&NoTraceHTML5Resource.label;" flex="7"/>
+			<splitter class="tree-splitter"/>
+			<treecol id="notraceaddons-type" label="&NoTraceHTML5Techniques.label;" flex="2" />
+		</treecols>
+		<treechildren id="notraceaddons-treechildren2">
+		</treechildren>
+	</tree>
+	
+	<box>
+		<button label="&NoTraceHTML5DeleteSingle.label;" oncommand="isisNoTrace.deleteSingleElementTree();" disabled="true" id="deleteSingle"/>
+		<button label="&NoTraceHTML5Reset.label;" oncommand="isisNoTrace.deleteDB();"/>
+		<button label="&NoTraceHTML5OK.label;" oncommand="window.close();"/>
+	</box>
+	
+</window>

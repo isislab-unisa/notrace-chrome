@@ -1,0 +1,6 @@
+<!ENTITY AdvertsList.label "Add NoTrace Filtering rules">
+<!ENTITY Listofitemstofilterout.label "Filtering rules">
+<!ENTITY EnterCustomRegexp.label "Add your new filtering rule: ">
+<!ENTITY SendUsCustomRegexps.label "Send us your new rule">
+<!ENTITY LoadAdList.label "Add filter">
+<!ENTITY CloseAdList.label "Remove">

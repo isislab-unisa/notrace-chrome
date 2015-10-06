@@ -1,0 +1,21 @@
+<!ENTITY NoTraceRebuildProfile.label "NoTrace  - Awareness">
+<!ENTITY NoTraceRebuildProfileDescription1.label "This Web site has:">
+<!ENTITY NoTraceRebuildProfileDescription2.label "HTTP Referer">
+<!ENTITY NoTraceRebuildProfileDescription3.label "HTTP cookies">
+<!ENTITY NoTraceRebuildProfileDescription4.label "Third party cookies">
+<!ENTITY NoTraceRebuildProfileDescription5.label "Third party requests">
+<!ENTITY NoTraceRebuildProfileDescription6.label "Web bugs">
+<!ENTITY NoTraceRebuildProfileDescription7.label "Flash cookies">
+<!ENTITY NoTraceRebuildProfileDescription8.label "Third party images">
+<!ENTITY NoTraceRebuildProfileLocation.label "Address">
+<!ENTITY NoTraceRebuildProfileValue.label "Value">
+<!ENTITY NoTraceRebuildProfileNameLeaked.label "Information">
+<!ENTITY NoTraceRebuildProfileValueLeaked.label "Value">
+<!ENTITY NoTraceRebuildProfileCategory.label "Category">
+<!ENTITY NoTraceRebuildProfileReset.label "Reset">
+<!ENTITY NoTraceRebuildProfileOK.label "OK">
+<!ENTITY NoTraceRebuildProfileHeader.label "Personal and Sensitive information leaked to third party entities">
+<!ENTITY NoTraceRebuildProfileDesc.label "Here we show what fraction of your profile is available to different aggregators, advertising companies and other trusted entities. We show both personal information and sensitive search terms leaked during your current browsing session.">
+<!ENTITY NoTraceRebuildProfileAggregatorTitle.label "Aggregators and ad-networks">
+<!ENTITY NoTraceRebuildProfileTTPTitle.label "Trusted third party entities">
+<!ENTITY NoTraceRebuildProfileTreeTitle.label "">

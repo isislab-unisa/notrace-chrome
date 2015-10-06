@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://notrace/locale/html5dettagli.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<window title="&NoTraceHTML5DettagliTitle.label;"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		onload="isisNoTrace.vai()">
+
+	<script type="application/x-javascript" src="html5dettagli.js" />
+	
+
+	<label value="&NoTraceHTML5DettagliLocation.label;"/>
+	<textbox id="notraceaddons-location" value=""/>
+	
+	<label value="&NoTraceHTML5DettagliResource.label;"/>
+	<textbox id="notraceaddons-resource" value=""/>
+	
+	<label value="&NoTraceHTML5DettagliTechniques.label;"/>
+	<textbox id="notraceaddons-techniques" value="" multiline="true" rows="20" cols="100"/>
+
+	<box align="right">
+		<button label="&NoTraceHTML5DettagliOK.label;" oncommand="window.close();"/>
+	</box>
+</window>

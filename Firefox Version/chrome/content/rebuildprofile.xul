@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://notrace/locale/rebuildprofile.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<?xul-overlay href="chrome://notrace/content/awarenessListOverlay.xul"?>
+
+<window title="&NoTraceRebuildProfile.label;"
+		windowtype="global:notracerebuildprofile"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		align="right"
+		onload="isisNoTrace.onload();"
+		onfocus="isisNoTrace.refresh();"
+		
+		xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<script type="application/x-javascript" src="rebuildprofile.js"/>
+	
+	<groupbox id="descr_box" width="700" height="270px" style="margin-top:10px;">
+			<description>
+				<html:span style="font-weight:bold;text-align:justify">
+					&NoTraceRebuildProfileHeader.label;
+				</html:span>
+				
+				<html:p style="text-align:justify">
+					&NoTraceRebuildProfileDesc.label;
+				</html:p>				
+				<html:table width="710" height="150" style="margin-left:0px;margin-top:30px;">
+					<html:td id="notraceThirdPartyDomainSide" width="100">
+						<label value="&NoTraceRebuildProfileAggregatorTitle.label;" style="font-weight:bold;"/>
+						<groupbox id="thirdpartyaggregatorslist" style="width:180px;">
+							<!--caption label="&NoTraceRebuildProfileAggregatorTitle.label;"/-->
+							<label id="domain1" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(1);"/>
+							<label id="domain2" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(2);"/>
+							<label id="domain3" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(3);"/>
+							<label id="domain4" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(4);"/>
+							<label id="domain5" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(5);"/>
+							<label id="domain6" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(6);"/>
+							<label id="domain7" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(7);"/>
+							<label id="domain8" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(8);"/>
+							<label id="domain9" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(9);"/>
+							<label id="domain10" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(10);"/>
+						</groupbox>
+					</html:td>
+					<html:td id="notraceThirdPartyDomainSide" width="100">
+						<label value="&NoTraceRebuildProfileTTPTitle.label;" style="font-weight:bold;"/>
+						<groupbox id="thirdpartyaggregatorslist" style="width:150px;">
+							<!--caption label="&NoTraceRebuildProfileTTPTitle.label;"/-->
+							<label id="domain11" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(11);"/>
+							<label id="domain12" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(12);"/>
+							<label id="domain13" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(13);"/>
+							<label id="domain14" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(14);"/>
+							<label id="domain15" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(15);"/>
+							<label id="domain16" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(16);"/>
+							<label id="domain17" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(17);"/>
+							<label id="domain18" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(18);"/>
+							<label id="domain19" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(19);"/>
+							<label id="domain20" class="text-link" style="text-decoration:underline;color:blue;margin-left:10px" value="" onclick="isisNoTrace.openDomainsDetails(20);"/>
+						</groupbox>
+					</html:td>
+				  <html:td width="500">
+						<vbox id="hiddenAwareness-group" flex="1">
+							<hbox>
+								<label id="notrace-treeLabel-pre" value="&NoTraceRebuildProfileTreeTitle.label;" style="font-weight:bold;"/>
+								<label id="notrace-treeLabel" value="&NoTraceRebuildProfileTreeTitle.label;" style="font-weight:bold;margin-left:0px;color:blue;"/>
+								<label id="notrace-treeLabel-post" value="&NoTraceRebuildProfileTreeTitle.label;" style="font-weight:bold;margin-left:0px;"/>
+							</hbox>
+							<hbox>
+								<tree id="awarenessTree" flex="1" rows="15">
+									<treecols>
+										<treecol id="infoLeaked" label="&NoTraceRebuildProfileNameLeaked.label;" flex="6" primary="true"/>
+										<splitter class="tree-splitter"/>
+										<treecol id="valueLeaked" label="&NoTraceRebuildProfileValueLeaked.label;" flex="6"/>
+										<!--<splitter class="tree-splitter"/>
+										<treecol id="categoryLeaked" label="&NoTraceRebuildProfileCategory.label;" flex="4"/>-->
+									</treecols>
+									<treechildren id="childreeenAwareness" ondblclick="isisNoTrace.dettagli();"></treechildren>
+								</tree>
+							</hbox>
+						</vbox>
+				  </html:td>	
+				  
+				</html:table>
+					<html:br/>
+				</description>
+	</groupbox>
+	
+	<box align="end">
+		<button label="&NoTraceRebuildProfileReset.label;" oncommand="isisNoTrace.deleteDB();"/>
+		<button label="&NoTraceRebuildProfileOK.label;" oncommand="window.close();"/>
+	</box>
+	
+</window>

@@ -1,0 +1,92 @@
+<!ENTITY OptionsTitle.label "NoTrace">
+<!ENTITY OptionsGeneralSettings.label "    General Settings    ">
+<!ENTITY OptionsLabel1.label "Global Score">
+<!ENTITY OptionsLabel2.label "Global score with no protection: ">
+<!ENTITY OptionsLabel3.label "Global score with selected techniques: ">
+<!ENTITY OptionsLabel4.label "General Settings">
+<!ENTITY OptionsLabel5.label "Standard Protection">
+<!ENTITY OptionsLabel6.label "Privacy for unexperienced or novice users. Select the level of protection that suits your wants and needs.
+									For each level we will activate, on behalf of you, the needed techniques to protect your privacy">
+<!ENTITY OptionsLabel7.label "Customized Protection   ">
+<!ENTITY OptionsLabel8.label "Privacy for expert users. Select here the category of privacy threats for which you want to provide the correct countermeasures">
+<!ENTITY OptionsLabel9.label "Personal Information ">
+<!ENTITY OptionsLabel10.label "Web Tracking  ">
+<!ENTITY OptionsLabel11.label "Third Party Activities and Ads ">
+<!ENTITY OptionsLabel12.label "Warn me in dangerous situations">
+<!ENTITY OptionsLabel13.label "Disable NoTrace">
+<!ENTITY OptionsLabel14.label "   Privacy Management   ">
+<!ENTITY OptionsLabel15.label "Techniques that limit the diffusion of your Personally Identifiable Information">
+<!ENTITY OptionsLabel16.label "Click on the 'Blockable Objects' field to inspect the resources discovered in your navigation and that could be blocked">
+<!ENTITY OptionsLabel17.label "Technique">
+<!ENTITY OptionsLabel18.label "Blockable Objects">
+<!ENTITY OptionsLabel19.label "Disable HTTP cookies">
+<!ENTITY OptionsLabel20.label "Filter out potentially identifying HTTP headers">
+<!ENTITY OptionsLabel21.label "Filter out cookies and referer in JavaScript code">
+<!ENTITY OptionsLabel22.label "Disable META cookies and redirects">
+<!ENTITY OptionsLabel24.label "Filter out Web images">
+<!ENTITY OptionsLabel25.label "Disable JavaScript executions">
+<!ENTITY OptionsLabel27.label "Filter HTML &lt;noscript&gt; tags">
+<!ENTITY OptionsLabel28.label "Techniques to address the Web tracking privacy threat ">
+<!ENTITY OptionsLabel29.label "Click on the 'Blockable Objects' field to inspect the resources discovered in your navigation and that could be blocked ">
+<!ENTITY OptionsLabel30.label "Disable third party JavaScript executions">
+<!ENTITY OptionsLabel31.label "Filter out third party images">
+<!ENTITY OptionsLabel32.label "Filter out Web bugs">
+<!ENTITY OptionsLabel33.label "Disable third party HTTP cookies">
+<!ENTITY OptionsLabel34.label "Filter out objects from top-10 third party domains">
+<!ENTITY OptionsLabel35.label "Disable Flash cookies">
+<!ENTITY OptionsLabel36.label "Disable hidden third party scripts">
+<!ENTITY OptionsLabel37.label "Advanced">
+<!ENTITY OptionsLabel38.label "Disable ad-network cookies">
+<!ENTITY OptionsLabel39.label "Techniques that block objects retrieved by third party domain servers and in general unwanted content">
+<!ENTITY OptionsLabel40.label "Click on the 'Blockable Objects' field to inspect the resources discovered in your navigation and that could be blocked ">
+<!ENTITY OptionsLabel41.label "Block requests for third party objects">
+<!ENTITY OptionsLabel42.label "Filter out third party objects with &quot;?&quot;, &quot;=&quot; or &quot;&amp;&quot;">
+<!ENTITY OptionsLabel43.label "Filter out advertisements">
+<!ENTITY OptionsLabel44.label "         Whitelist        ">
+<!ENTITY OptionsLabel45.label "Trusted domains">
+<!ENTITY OptionsLabel46.label "You can specify which Web sites can be allowed. Type the domain
+						(e.g. site.com) of the site you want allow and then click Allow">
+<!ENTITY OptionsLabel47.label "Address of Web site:">
+<!ENTITY OptionsLabel48.label "Allow">
+<!ENTITY OptionsLabel49.label "Import">
+<!ENTITY OptionsLabel50.label "Delete Selected Sites">
+<!ENTITY OptionsLabel51.label "        Help        ">
+<!ENTITY OptionsLabel52.label "  About Us ">
+<!ENTITY OptionsLabel53.label "Version">
+<!ENTITY OptionsLabel54.label "NoTrace Web Page">
+<!ENTITY OptionsLabel55.label "Author">
+<!ENTITY OptionsLabel56.label "Developers">
+<!ENTITY OptionsLabel57.label "Contributors">
+<!ENTITY OptionsLabel58.label "Delete HTML5 LocalStorage data">
+<!ENTITY OptionsLabel59.label "View data">
+<!ENTITY OptionsLabel60.label "             Help Us             ">
+<!ENTITY OptionsLabel61.label "Share Information">
+<!ENTITY OptionsLabel62.label "Anonymous">
+<!ENTITY OptionsLabel63.label "Identifying">
+<!ENTITY OptionsLabel64.label "Send feedback">
+<!ENTITY OptionsLabel65.label "http://www.isislab.it/project/NoTrace/feedback.php">
+<!ENTITY OptionsLabel66.label "Through NoTrace we are able to inspect how third party sites monitor users activities on the Web. Moreover, you can help us to build a much more detailed picture of the tracking activities made by large companies. If you would like to contribute to make the Web a safer place, please check the option below. You will send us which techniques you activate more often (for your visited Web sites), and statistics (i.e., counts) about their penetration in your navigation. 
+
+If you do not want to let us know your Web browsing history you can choose the Anonymous option, that will mask the address of the Web sites you visited. ">
+<!ENTITY OptionsLabel67.label "Domain">
+<!ENTITY OptionsLabel68.label "Techinques that filter malicious objects">
+<!ENTITY OptionsLabel69.label "Counts">
+<!ENTITY OptionsLabel70.label "Data preview                ">
+<!ENTITY OptionsLabel71.label "Send data back to us every ">
+<!ENTITY OptionsLabel72.label " days">
+<!ENTITY OptionsLabel73.label " No Fingerprinting">
+<!ENTITY OptionsLabel74.label " Show button in the Addon-Bar">
+
+
+
+<!ENTITY Options.Customized "Customized">
+<!ENTITY Options.Low "Low">
+<!ENTITY Options.Medium "Medium">
+<!ENTITY Options.High "High">
+<!ENTITY Options.Auto "Auto">
+<!ENTITY Options.Customized.desc "Customize NoTrace by yourself, according to your wants, needs and expertises">
+<!ENTITY Options.Low.desc "Protect your personal information with no functional break">
+<!ENTITY Options.Medium.desc "Protect your personal information and your navigation with no quality and functional break">
+<!ENTITY Options.High.desc "Protect your personal information and your navigation against malicious activities on the Web. To ensure total privacy, some breaks may occur">
+<!ENTITY deleteallresources.label "Delete all data items (Blockable Objects)">
+<!ENTITY deleteallresources.alert "Attention, this action will delete the items from all the three categories of privacy threats">

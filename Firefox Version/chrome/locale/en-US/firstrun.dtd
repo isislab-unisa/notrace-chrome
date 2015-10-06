@@ -1,0 +1,10 @@
+<!ENTITY FirstRun.title "Welcome to NoTrace!">
+<!ENTITY FirstRunTitle.title "No-Trace    ">
+<!ENTITY FirstRunTitle.description "      Start-up configuration">
+<!ENTITY FirstRunCaption.title "Select protection level: ">
+<!ENTITY FirstRunDescription.empty " ">
+<!ENTITY FirstRunRadio.Manual "Manual">
+<!ENTITY FirstRunRadio.Low "Low">
+<!ENTITY FirstRunRadio.Medium "Medium">
+<!ENTITY FirstRunRadio.High "High">
+<!ENTITY FirstRunRadio.Auto"Auto">

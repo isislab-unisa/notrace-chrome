@@ -1,0 +1,22 @@
+<!ENTITY NoTraceRebuildProfile.label "NoTrace  - Awareness">
+<!ENTITY NoTraceRebuildProfileDescription1.label "Questa pagina Web contiene:">
+<!ENTITY NoTraceRebuildProfileDescription2.label "Referer">
+<!ENTITY NoTraceRebuildProfileDescription3.label "Cookie">
+<!ENTITY NoTraceRebuildProfileDescription4.label "Cookie di terze parti">
+<!ENTITY NoTraceRebuildProfileDescription5.label "Richieste per siti di terze parti">
+<!ENTITY NoTraceRebuildProfileDescription6.label "Immagini invisibili (1x1)">
+<!ENTITY NoTraceRebuildProfileDescription7.label "Flash cookie">
+<!ENTITY NoTraceRebuildProfileDescription8.label "Immagini di terze parti">
+<!ENTITY NoTraceRebuildProfileLocation.label "Indirizzo">
+<!ENTITY NoTraceRebuildProfileValue.label "Valore">
+<!ENTITY NoTraceRebuildProfileNameLeaked.label "Informazioni">
+<!ENTITY NoTraceRebuildProfileValueLeaked.label "Valore">
+<!ENTITY NoTraceRebuildProfileCategory.label "Categoria">
+<!ENTITY NoTraceRebuildProfileReset.label "Cancella">
+<!ENTITY NoTraceRebuildProfileOK.label "OK">
+<!ENTITY NoTraceRebuildProfileHeader.label "Informazioni circa i dati divulgati e verso quali aggregatori sono state perse">
+<!ENTITY NoTraceRebuildProfileDesc.label "In questa sezione potrai vedere quali dati personali sono stati raccolti sulla pagina Web da te visitata e divulgati a siti di terze parti o alle grandi agenzie e compagnie pubblicitarie.
+Il numero di minacce scoperte ed i dettagli circa le tue infomazioni personali sono mostrate di seguito.">
+<!ENTITY NoTraceRebuildProfileAggregatorTitle.label "Chi ti sta tracciando">
+<!ENTITY NoTraceRebuildProfileTTPTitle.label "Chi ti sta tracciando">
+<!ENTITY NoTraceRebuildProfileTreeTitle.label "">

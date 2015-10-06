@@ -1,0 +1,7 @@
+<!ENTITY ControlPanelMenuItem.label "Control Panel">
+<!ENTITY ShowBlockedObjects.label "Show Blocked Objects">
+<!ENTITY ShowHistory.label "Show History">
+<!ENTITY UserAwareness.label "Show Privacy Leakage">
+<!ENTITY RebuildProfile.label "Show what ad-networks know about you">
+<!ENTITY ToolbarButton.label "NoTrace Menu">
+<!ENTITY HideMenu.label "Hide Icon">

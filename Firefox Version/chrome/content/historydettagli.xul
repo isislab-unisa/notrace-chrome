@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://notrace/locale/historydettagli.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<window title="&NoTraceHistoryDettagliTitle.label;"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		onload="isisNoTrace.vai()">
+
+	<script type="application/x-javascript" src="historydettagli.js" />
+	
+
+	<label value="&NoTraceHistoryDettagliLocation.label;"/>
+	<textbox id="notraceaddons-location" value=""/>
+	
+	<label value="&NoTraceHistoryDettagliResource.label;"/>
+	<textbox id="notraceaddons-resource" multiline="true" value="" rows="20" cols="100"/>
+	
+	<label value="&NoTraceHistoryDettagliTechniques.label;"/>
+	<textbox id="notraceaddons-techniques" value=""/>
+
+	<box align="right">
+		<button label="&NoTraceHistoryDettagliOK.label;" oncommand="window.close();"/>
+	</box>
+</window>

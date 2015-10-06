@@ -1,0 +1,11 @@
+#progress-bar {
+   background: url(../imgs/percentage-bg.png) no-repeat left center;
+   width: 214px;
+   height: 29px;
+   margin: 0 auto;
+	}
+#progress-level {
+   background: url(../imgs/progress.png) no-repeat left center;
+   width: 0%; /* SET THIS TO GET THE DESIRE LEVEL */
+   height: 29px;
+	}

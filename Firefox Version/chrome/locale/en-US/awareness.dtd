@@ -1,0 +1,18 @@
+<!ENTITY NoTraceSensitiveInfo.label "NoTrace  - Awareness">
+<!ENTITY NoTraceSensitiveInfoDescription1.label "This Web site has:">
+<!ENTITY NoTraceSensitiveInfoDescription2.label "HTTP Referer">
+<!ENTITY NoTraceSensitiveInfoDescription3.label "HTTP cookies">
+<!ENTITY NoTraceSensitiveInfoDescription4.label "Third party cookies">
+<!ENTITY NoTraceSensitiveInfoDescription5.label "Third party requests">
+<!ENTITY NoTraceSensitiveInfoDescription6.label "Web bugs">
+<!ENTITY NoTraceSensitiveInfoDescription7.label "Flash cookies">
+<!ENTITY NoTraceSensitiveInfoDescription8.label "Third party images">
+<!ENTITY NoTraceSensitiveInfoLocation.label "Address">
+<!ENTITY NoTraceSensitiveInfoValue.label "Value">
+<!ENTITY NoTraceSensitiveInfoNameLeaked.label "Information">
+<!ENTITY NoTraceSensitiveInfoValueLeaked.label "Value">
+<!ENTITY NoTraceSensitiveCategory.label "Category">
+<!ENTITY NoTraceSensitiveInfoReset.label "Reset">
+<!ENTITY NoTraceSensitiveInfoOK.label "OK">
+<!ENTITY NoTraceSensitiveInfoHeader.label "Information about the current Web site and about the disclosure of the personal information">
+<!ENTITY NoTraceSensitiveDesc.label "Here you can see which data is being collected by the Web sites you visit and which information is disclosed to third party Web sites and large Advertising companies. Counts about the discovered privacy threats and awareness about the personal information leaked during your navigation are shown in the follows.">

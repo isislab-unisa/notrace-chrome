@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://notrace/locale/history.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<window title="&NoTraceHistory.label;"
+		windowtype="global:notracehistory"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		align="right"
+		onload="isisNoTrace.createTreeHistory();isisNoTrace.setTreeSize();"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<script type="application/x-javascript" src="history.js" />
+
+	<groupbox id="notraceaddons-descr_box" align="left" style="margin-top:10px;margin-left:10px;">
+		<description>
+			<description>&NoTraceHistoryDescription1.label;</description>
+			<!--<description>&NoTraceHistoryDescription2.label;</description>-->
+			<description>&NoTraceHistoryDescription3.label;</description>
+			<html:ul style="margin:0px;">
+				<html:li>&NoTraceHistoryDescription4.label;</html:li>
+				<html:li>&NoTraceHistoryDescription5.label;</html:li>
+				<!--<html:li>&NoTraceHistoryDescription6.label;</html:li>-->
+			</html:ul>
+		</description>
+	</groupbox>
+	
+	<tree id="notraceaddons-historytree" flex="1" style="margin:10px;" ondblclick="isisNoTrace.dettagli();">
+		<treecols>
+			<treecol id="notraceaddons-requestOrigin" label="&NoTraceHistoryLocation.label;" flex="2" primary="true"/>
+			<splitter class="tree-splitter"/>
+			<treecol id="notraceaddons-resource" label="&NoTraceHistoryResource.label;" flex="7"/>
+			<!--<splitter class="tree-splitter"/>
+			<treecol id="notraceaddons-type" label="&NoTraceHistoryTechniques.label;" flex="2" />-->
+		</treecols>
+		<treechildren id="notraceaddons-treechildren2">
+		</treechildren>
+	</tree>
+	
+	<box>
+		<button label="&NoTraceHistoryReset.label;" oncommand="isisNoTrace.deleteDB();"/>
+		<button label="&NoTraceHistoryOK.label;" oncommand="window.close();"/>
+	</box>
+	
+</window>

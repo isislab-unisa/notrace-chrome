@@ -1,0 +1,7 @@
+<!ENTITY ControlPanelMenuItem.label "Pannello di Controllo">
+<!ENTITY ShowBlockedObjects.label "Mostra oggetti bloccati">
+<!ENTITY ShowHistory.label "Mostra History">
+<!ENTITY UserAwareness.label "Mostra dati sensibili">
+<!ENTITY RebuildProfile.label "Scopri cosa si sa di te">
+<!ENTITY ToolbarButton.label "NoTrace">
+<!ENTITY HideMenu.label "Nascondi icona">

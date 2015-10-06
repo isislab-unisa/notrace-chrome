@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay SYSTEM "chrome://notrace/locale/optoutlist.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="css/options.css" type="text/css"?>
+
+<overlay
+    id="optOutList-window"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<groupbox id="optOutList-group"> <!--style="display:none;"-->
+		<vbox class="width_dialog">
+			<caption label="&OptOutListCaption.label;" style="font-weight:bold;"/>
+					<tree id="tree-optout" editable="true" flex="1" onclick="isisNoTrace.optlist.modifyoptlist(event);" rows="3">
+						<treecols class="width_tree">
+							<treecol primary="true" label="&OptOutListDomain.label;" flex="1" id="number" editable="false"/>
+							<treecol label="&OptOutListOptOutState.label;" type="checkbox" editable="true"/>
+						</treecols>
+						<treechildren>
+							<treeitem container="true" open="false">
+								<treerow>
+									<treecell label="&OptOutListItem1.label;" editable="false"/>
+									<treecell value="false" id="&OptOutListItemValue1.label;" label="&OptOutListItemValue1.label;"/>
+								</treerow>							
+								<treechildren id="google"/>
+							</treeitem>
+							<treeitem container="true" open="false">
+								<treerow>
+									<treecell label="&OptOutListItem2.label;" editable="false"/>
+									<treecell value="false" id="&OptOutListItemValue2.label;" label="&OptOutListItemValue2.label;"/>
+								</treerow>							
+								<treechildren id="aol"/>
+							</treeitem>
+							<treeitem container="true" open="false">
+								<treerow>
+									<treecell label="&OptOutListItem3.label;" editable="false"/>
+									<treecell value="false" id="&OptOutListItemValue3.label;" label="&OptOutListItemValue3.label;"/>
+								</treerow>							
+								<treechildren id="yahoo"/>
+							</treeitem>
+							<treeitem container="true" open="false">
+								<treerow>
+									<treecell label="&OptOutListItem4.label;" editable="false"/>
+									<treecell value="false" id="&OptOutListItemValue4.label;" label="&OptOutListItemValue4.label;"/>
+								</treerow>							
+								<treechildren id="microsoft"/>
+							</treeitem>
+							<treeitem container="true" open="false">
+								<treerow>
+									<treecell label="&OptOutListItem5.label;" editable="false"/>
+									<treecell value="false" id="&OptOutListItemValue5.label;" label="&OptOutListItemValue5.label;"/>
+								</treerow>							
+								<treechildren id="valueclick"/>
+							</treeitem>
+							<treeitem container="true" open="false">
+								<treerow>
+									<treecell label="&OptOutListItem6.label;" editable="false"/>
+									<treecell value="false" id="&OptOutListItemValue6.label;" label="&OptOutListItemValue6.label;"/>
+								</treerow>							
+								<treechildren id="akamai"/>
+							</treeitem>
+							<treeitem container="true" open="false">
+								<treerow>
+									<treecell label="&OptOutListItem7.label;" editable="false"/>
+									<treecell value="false" id="&OptOutListItemValue7.label;" label="&OptOutListItemValue7.label;"/>
+								</treerow>							
+								<treechildren id="omniture"/>
+							</treeitem>
+							<treeitem container="true" open="false">
+								<treerow>
+									<treecell label="&OptOutListItem8.label;" editable="false"/>
+									<treecell value="false" id="&OptOutListItemValue8.label;" label="&OptOutListItemValue8.label;"/>
+								</treerow>							
+								<treechildren id="other"/>
+							</treeitem>							
+						</treechildren>
+					</tree>
+				<vbox align="left">
+					<hbox align="left">	
+						<button id="enable" label="&OptOutListSelectAll.label;" oncommand="isisNoTrace.enableAllOpt();isisNoTrace.optlist.onoffoptlist('on','1');" height="24" />
+						<button id="disable" label="&OptOutListClear.label;" oncommand="isisNoTrace.disableAllOpt();isisNoTrace.optlist.onoffoptlist('off','1');" height="24" />	
+					</hbox>
+					<box align="left">
+						<description style="font-weight:bold;">&OptOutListTotal.label;<label id="optTot" style="font-weight:bold;" value="_"/></description>
+						<description style="font-weight:bold;">&OptOutListOptedOut.label;<label id="optAtt" style="font-weight:bold;" value="_"/></description>
+					</box>
+				</vbox>
+		</vbox>
+	</groupbox>
+</overlay>

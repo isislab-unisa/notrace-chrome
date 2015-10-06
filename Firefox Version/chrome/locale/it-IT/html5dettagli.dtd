@@ -1,0 +1,5 @@
+<!ENTITY NoTraceHTML5DettagliTitle.label "NoTrace - Dettagli HTML5 Local Storage ">
+<!ENTITY NoTraceHTML5DettagliLocation.label "Dominio">
+<!ENTITY NoTraceHTML5DettagliResource.label "Chiave">
+<!ENTITY NoTraceHTML5DettagliTechniques.label "Valore">
+<!ENTITY NoTraceHTML5DettagliOK.label "OK">

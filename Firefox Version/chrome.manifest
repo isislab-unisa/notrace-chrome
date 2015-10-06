@@ -1,0 +1,37 @@
+#contentacessible=yes
+content notrace chrome/content/
+content notracedb chrome/content/lists/
+overlay chrome://browser/content/browser.xul chrome://notrace/content/addonbar.xul application={ec8030f7-c20a-464f-9b0e-13a3a9e97384} appversion>=4.0
+overlay chrome://browser/content/browser.xul chrome://notrace/content/hiddenScript.xul
+overlay chrome://browser/content/browser.xul chrome://notrace/content/awarenessListOverlay.xul
+overlay chrome://browser/content/browser.xul chrome://notrace/content/sidebar.xul
+
+#Registration for ContentFilter
+component {2e608a18-0b5b-11dc-8314-0800200c9a66} components/ContentFilter.js
+contract @unisa.it/contentfilter;1 {2e608a18-0b5b-11dc-8314-0800200c9a66}
+category profile-after-change ContentFilter @unisa.it/contentfilter;1
+
+#Registration for HTTPFilter
+component {7f66f8fc-f4c2-11db-8314-0800200c9a66} components/HttpFilter.js
+contract @unisa.it/httpfilter;1 {7f66f8fc-f4c2-11db-8314-0800200c9a66}
+category profile-after-change HttpFilter @unisa.it/httpfilter;1
+
+#Registration for HtmlFilter
+component {305f5aba-3c5f-11dc-8314-0800200c9a66} components/HtmlFilter.js
+contract @unisa.it/htmlfilter;1 {305f5aba-3c5f-11dc-8314-0800200c9a66}
+category profile-after-change HtmlFilter @unisa.it/htmlfilter;1
+
+#Registration for ContentTypeModifier
+component {63ac9ce4-3c54-11dc-8314-0800200c9a66} components/ContentTypeModifier.js
+contract @unisa.it/contenttypemodifier;1 {63ac9ce4-3c54-11dc-8314-0800200c9a66}
+category profile-after-change ContentTypeModifier @unisa.it/contenttypemodifier;1
+
+#Registration for nsIHTMLNotifierNoTrace
+component {7f48b4de-3c5a-11dc-8314-0800200c9a66} components/nsIHTMLNotifierNoTrace.js
+contract @mozilla.org/streamconv;1?from=text/htmlproxy&to=*/* {7f48b4de-3c5a-11dc-8314-0800200c9a66}
+category profile-after-change nsIHTMLNotifierNoTrace @mozilla.org/streamconv;1?from=text/htmlproxy&to=*/*
+interfaces components/nsIHTMLNotifierNoTrace.xpt
+
+locale notrace en-US chrome/locale/en-US/
+locale notrace it-IT chrome/locale/it-IT/
+resource  notrace	modules/

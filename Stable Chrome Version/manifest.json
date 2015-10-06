@@ -1,0 +1,49 @@
+{
+	"manifest_version": 2,
+	"name": "__MSG_appName__",
+	"version": "3.0",
+	"description": "__MSG_appDesc__",
+	"author": "__MSG_appAuthor__",
+	"homepage_url": "http://www.isislab.it/projects/NoTrace/",
+	"default_locale": "it",
+	"icons": {
+		"16" : "imgs/NoTrace_icon16.png",
+		"32" : "imgs/NoTrace_icon32.png",
+		"48" : "imgs/NoTrace_icon48.png",
+		"128" : "imgs/NoTrace_icon128.png"
+	},
+	"browser_action": {
+		"default_icon": "imgs/NoTrace_icon16.png",
+		"default_title": "NoTrace",
+		"default_popup": "options.html"
+	},
+	"permissions": [
+		"*://*/*",
+		"storage",
+		"tabs",
+		"webRequest",
+		"webRequestBlocking",
+		"cookies",
+		"contentSettings",
+		"privacy"
+	],
+	"background": {
+		"scripts": [
+			"js/utils/utils.js",
+			"js/utils/utilsDb.js",
+			"js/utils/utilsAbilitazioni.js",
+			"js/tech/noidheader.js",
+			"js/tech/no3img.js",
+			"js/tech/no3hiddenobj.js",
+			"js/tech/notop.js",
+			"js/tech/noad.js",
+			"js/tech/noadnetwcookie.js",
+			"js/tech/no3pe.js",
+            "js/tech/no3cookie.js",
+			"js/tech/no3objnoid.js",
+			"js/tech/nofingerprinting.js",
+            "js/tech/nofingerprintinguseragent.js",
+			"background.js"
+		]
+	}
+}

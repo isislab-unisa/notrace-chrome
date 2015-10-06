@@ -1,0 +1,12 @@
+<!ENTITY NoTraceHTML5.label "NoTrace - HTML5 Local Storage">
+<!ENTITY NoTraceHTML5Description1.label "Data saved in your LocalStorage.">
+<!ENTITY NoTraceHTML5Description2.label "Data are grouped by domain">
+<!ENTITY NoTraceHTML5Description3.label "Data are grouped by domain">
+<!ENTITY NoTraceHTML5Description4.label "Data are grouped by domain">
+<!ENTITY NoTraceHTML5Description5.label "Double click on an item to open it and view the details about stored information">
+<!ENTITY NoTraceHTML5Location.label "Location">
+<!ENTITY NoTraceHTML5Resource.label "Key">
+<!ENTITY NoTraceHTML5Techniques.label "Value">
+<!ENTITY NoTraceHTML5Reset.label "Clear storage">
+<!ENTITY NoTraceHTML5DeleteSingle.label "Delete object">
+<!ENTITY NoTraceHTML5OK.label "OK">

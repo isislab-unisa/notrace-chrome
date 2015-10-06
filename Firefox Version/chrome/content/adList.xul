@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay SYSTEM "chrome://notrace/locale/adlist.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<overlay
+    id="adopt-window"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<groupbox id="noAds-group" style="display:none;">
+		<vbox class="width_dialog">
+			<caption label="&AdvertsList.label;" flex="1" style="font-weight:bold;"/>
+			<vbox>
+				<hbox >          
+					<tree id="noadlist" seltype="single" flex="1" rows="6">
+						<treecols class="width_tree">
+							<treecol id="adlist" label="&Listofitemstofilterout.label;" flex="1" primary="true"/>
+						</treecols>
+						<treechildren id="adlist-children"/>
+					</tree>	
+				</hbox>			
+				<spacer/>
+				<vbox>
+					<label control="notrace-customregexp" value="&EnterCustomRegexp.label;"/>
+					<textbox id="notrace-customregexp" value=""/>
+				</vbox>
+				<hbox align="left">					
+					<button label="&LoadAdList.label;" oncommand="isisNoTrace.adlist.AddToPersonalAdList();"/>
+					<spacer/>
+					<button label="&CloseAdList.label;" oncommand="isisNoTrace.adlist.removeFromPersonalAdList();"/>
+				</hbox>
+				<vbox>
+					<checkbox id="chb_AdListFeddback" label="&SendUsCustomRegexps.label;" checked="false"/>
+				</vbox>
+			</vbox>
+		</vbox>
+	</groupbox>
+</overlay>

@@ -1,0 +1,103 @@
+div > details {
+	color: #FF8E3B;
+	text-align: left;
+	margin-left: 2mm;
+	margin-top: 2mm;
+	max-width: 75mm;
+}
+
+.contenuti_tecniche {
+	position: relative;
+	width: 100%;
+	height: 80mm;
+	top: 8mm;
+	overflow: auto;
+	padding-left: 3mm;
+	padding-right: 3mm;
+	box-sizing: border-box;
+} 
+
+.tabella_tecniche {
+	width: 100%;
+	height: auto;
+	border-collapse: separate;
+	border-spacing: 0mm 7mm;
+}
+
+.righe_tecniche td  {
+	border-bottom: 0.5mm solid #EEEEEE;
+}
+
+.nomi_opzioni {
+	font-family: "Helvetica Neue", Helvetica;
+	font-size: 11pt;
+	text-align: left;
+	outline: none;
+}
+
+.switch {
+	position: relative;
+}
+
+details > summary.nomi_opzioni {
+	color: black;
+	cursor: pointer;
+}
+
+details[open] > summary.nomi_opzioni {
+	color: #FF8E3B;
+	cursor: pointer;
+}
+
+.onoffswitch {
+    position: absolute;
+	top: -2.5mm;
+	right: 0mm;
+	width: 17mm;
+    -webkit-user-select:none; 
+	-moz-user-select:none;
+	-ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 5mm;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 6mm; padding: 0; line-height: 6mm;
+    font-size: 10pt; color: white; font-family: "Helvetica Neue", Helvetica; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 4mm;
+    background-color: #FF8E3B; color: #FFFFFF;
+	text-align: left;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 1.7mm;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 4mm; margin: 1mm;
+    background: #FFFFFF;
+    border: 2px solid #999999; border-radius: 5mm;
+    position: absolute; top: 0; bottom: 0; right: 9mm;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

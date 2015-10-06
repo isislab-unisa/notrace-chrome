@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://notrace/locale/options.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="css/options.css" type="text/css"?>
+<?xml-stylesheet href="css/progressBar.css" type="text/css"?>
+
+<?xul-overlay href="chrome://notrace/content/hiddenScript.xul"?>
+<?xul-overlay href="chrome://notrace/content/optOutList.xul"?>
+<?xul-overlay href="chrome://notrace/content/adList.xul"?>
+
+<prefwindow title="NoTrace" height="700" id="notraceprefwin" windowtype="global:notraceprefwin"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	    xmlns:html="http://www.w3.org/1999/xhtml"
+	    onload="isisNoTrace.os_adjustment();isisNoTrace.disNotrace1();isisNoTrace.calcolaScore();isisNoTrace.calcolaGlobal();isisNoTrace.enableCheckCustomProtectionOnLoad();isisNoTrace.initAbout();"
+		ondialogaccept="isisNoTrace.aggiornapref();">
+
+	<script type="application/x-javascript" src="options.js" />
+
+	<prefpane id="panegeneral" label="&OptionsGeneralSettings.label;" image="imgs/settings.png" selected="true" flex="1">
+		<preferences id="prefpersonal">
+			<preference id="observepersonal" type="bool" name="extensions.notrace.observe.personal"/>
+			<preference id="observetracking" type="bool" name="extensions.notrace.observe.tracking"/>
+			<preference id="observeannoying" type="bool" name="extensions.notrace.observe.annoying"/>
+			<preference id="observedisable" type="bool" name="extensions.notrace.observe.disable"/>
+			<preference id="observered" type="bool" name="extensions.notrace.observe.red"/>
+			<preference id="observeorange" type="bool" name="extensions.notrace.observe.orange"/>
+			<preference id="observegreen" type="bool" name="extensions.notrace.observe.green"/>
+			<preference id="training" type="bool" name="extensions.notrace.observe.training"/>
+			<preference id="observemanual" type="bool" name="extensions.notrace.observe.manual"/>
+			<preference id="observedisable" type="bool" name="extensions.notrace.observe.disable"/>
+			<preference id="warning" type="bool" name="extensions.notrace.warning"/>
+			<preference id="barbutton" type="bool" name="extensions.notrace.addonbarbutton"/>
+		</preferences>
+		
+		<groupbox style="display:none">
+			<caption label="&OptionsLabel1.label;" style="font-weight:bold;"/>
+			<description>&OptionsLabel2.label;<label id="scorespan" value="_"/></description>
+			<description>&OptionsLabel3.label;<label id="scorespanb" value="_"/></description> 
+			<description><image src="imgs/progress/0.png" style="width:40%" id="progressBar"/></description>
+			<description><label id="percprot" value="_"/></description>
+		</groupbox>
+	
+		<tabbox id="nt-mainTab">
+			<tabs>
+				<tab label="&OptionsLabel4.label;" style = "font-weight:bold"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel id="mainTabID">	
+					<grid>
+						<columns>
+							<column flex="1"/>
+						</columns>
+						<rows>
+							<row>		
+								<description style="line-height:15px;"></description>
+								<groupbox>
+									<caption label="&OptionsLabel5.label;" style="font-weight:bold;"/>
+									<box style="visibility:hidden;width:430px;"></box>
+									<description style="white-space: normal; width: 20em">&OptionsLabel6.label;</description>
+									<description style="line-height:15px;"></description>
+									<description style="line-height:15px;"></description>
+									<hbox>
+										<radiogroup id="level">
+											 <radio class="descRadio" id="red" preference="observered" label="&Options.Low;"  style="font-weight:bold;" onclick="isisNoTrace.disableCustomizedProtection();isisNoTrace.prepareForLevel('1');isisNoTrace.livello('1');"/>
+											 <radio class="descRadio" id="orange" preference="observeorange" label="&Options.Medium;"   style="font-weight:bold;" onclick="isisNoTrace.disableCustomizedProtection();isisNoTrace.prepareForLevel('2');isisNoTrace.livello('2');"/><!--isisNoTrace.disableCustomizedProtection();-->
+											 <radio class="descRadio" id="green" preference="observegreen" label="&Options.High;"   style="font-weight:bold;" onclick="isisNoTrace.disableCustomizedProtection();isisNoTrace.prepareForLevel('3');isisNoTrace.livello('3');"/><!--isisNoTrace.disableCustomizedProtection();-->
+											 <radio class="descRadio" id="black" preference="observemanual" label="&Options.Customized;"  style="font-weight:bold;" oncommand="isisNoTrace.enableDisableCustomizedProtection();"/>
+											 <radio class="descRadio" id="blue" preference="training" label="&Options.Auto;"  accesskey="O" style="color:blue;font-weight:bold;display:none;" /><!--onclick="isisNoTrace.cambiaImg();"-->
+										</radiogroup>	
+										<vbox class = "box_desc">
+											<description class="desc" multiline="true" id="desc_low">&Options.Low.desc;</description>
+											<description class="desc" multiline="true" id="desc_medium">&Options.Medium.desc;</description>
+											<description class="desc" multiline="true" id="desc_high">&Options.High.desc;</description>
+											<description class="desc" multiline="true" id="desc_custo">&Options.Customized.desc;</description> 
+										</vbox>
+									</hbox>
+								</groupbox>
+							</row>
+							<row>
+								<description><html:br style="line-height:15px;"></html:br></description>
+								<vbox id="addonBarButtonPanel">
+									<groupbox>
+										<checkbox id="cbaddonbarbutton" label="&OptionsLabel74.label;" onclick="isisNoTrace.showHideAddonBarButton('cbaddonbarbutton');" preference="barbutton"/>
+									</groupbox>	
+								</vbox>
+							</row>
+							<row>
+								<description><html:br style="line-height:15px;"></html:br></description>
+								<vbox id="customizedProtectionGroup" style="display:none;">
+									<groupbox>
+										<caption label="&OptionsLabel7.label;" style="font-weight:bold;"/>
+										<description style="white-space: normal; width: 20em">&OptionsLabel8.label;</description>
+										<description style="line-height:15px;"></description>
+										<description style="line-height:15px;"></description>
+										<checkbox id="cb1" checked="true" style="display:none;" label="I care about Personal Information" preference="observepersonal" />
+										<checkbox id="cb2" checked="true" style="display:none;" label="I care about Web Tracking" preference="observetracking" />
+										<checkbox id="cb3" checked="true" style="display:none;" label="I care about Advertisements" preference="observeannoying" />
+										<description><image src="imgs/user24.png"/><label id="nt-lblPrivacy" class="text-link header" preference="observepersonal" accesskey="P"  onclick="isisNoTrace.showFirstPanel();" value="&OptionsLabel9.label;" /></description>
+										<description><image src="imgs/behav24.png"/><label id="nt-lblBehavioralAdvertising" class="text-link header" preference="observetracking" onclick="isisNoTrace.showSecondPanel();" value="&OptionsLabel10.label;" /></description>
+										<description><image src="imgs/noad24.png"/><label id="nt-lblAdvertisements" class="text-link header" preference="observeannoying" accesskey="A" onclick="isisNoTrace.showThirdPanel();" value="&OptionsLabel11.label;" /></description>
+									</groupbox>	
+								</vbox>
+							</row>
+							<row><separator /></row>
+							<row>
+								<description><html:br style="line-height:15px;"></html:br></description>
+								<groupbox style="display:none">
+									<checkbox label="&OptionsLabel12.label;" preference="warning" accesskey="W"/>
+								</groupbox>
+								<groupbox align="left" style="display:none">
+									<checkbox id="dis" label="&OptionsLabel13.label;" preference="observedisable" accesskey="D" style="font-weight:bold;" onclick="isisNoTrace.disNotrace();"/>
+								</groupbox>
+							</row>
+							<row><separator /></row>
+						</rows>
+					</grid>	
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</prefpane>
+	
+	<prefpane onpaneload="isisNoTrace.selectPane('cb1');" id="panepersonal" label="&OptionsLabel14.label;" image="imgs/lock.png" flex="1">
+		<preferences id="prefpersonal">
+			<preference id="nocookie" type="bool" name="extensions.notrace.technique.nocookie"/>
+			<preference id="noidheader" type="bool" name="extensions.notrace.technique.noidheader"/>
+			<preference id="noimg" type="bool" name="extensions.notrace.technique.noimg"/>
+			<preference id="nojs" type="bool" name="extensions.notrace.technique.nojs"/>
+			<preference id="nonoscript" type="bool" name="extensions.notrace.technique.nonoscript"/>
+			<preference id="nometaredirectandcookie" type="bool" name="extensions.notrace.technique.nometaredirectandcookie"/>
+			<preference id="nojscookie" type="bool" name="extensions.notrace.technique.nojscookie"/>
+			<!--<preference id="nometaredirect" type="bool" name="extensions.notrace.technique.nometaredirect"/>-->
+		</preferences>
+		<tabbox id="nt-privacyManagementTab">
+			<tabs>
+				<tab id="tab1" label=" &OptionsLabel9.label;" style = "font-weight:bold;"/>
+				<tab id="tab2" label=" &OptionsLabel10.label;" style = "font-weight:bold;"/>
+				<tab id="tab3" label=" &OptionsLabel11.label;" style = "font-weight:bold;"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel id="panepersonal1">
+					<preferences id="prefpersonal">
+						<preference id="nocookie" type="bool" name="extensions.notrace.technique.nocookie"/>
+						<preference id="noidheader" type="bool" name="extensions.notrace.technique.noidheader"/>
+						<preference id="noimg" type="bool" name="extensions.notrace.technique.noimg"/>
+						<preference id="nojs" type="bool" name="extensions.notrace.technique.nojs"/>
+						<preference id="nonoscript" type="bool" name="extensions.notrace.technique.nonoscript"/>
+						<preference id="nometacookie" type="bool" name="extensions.notrace.technique.nometacookie"/>
+						<preference id="nojscookie" type="bool" name="extensions.notrace.technique.nojscookie"/>
+						<preference id="nometaredirect" type="bool" name="extensions.notrace.technique.nometaredirect"/>
+					</preferences>
+					<box orient="vertical">
+						<vbox>
+							<description>&OptionsLabel15.label;</description>
+							<description class="descriptionText">&OptionsLabel16.label;</description>
+							<grid flex="1" class="nopad_nomarg">
+								<columns>
+									<column flex="3" />
+									<column flex="1" />
+								</columns>	
+								<rows>
+									<row style="font-weight:bold;padding: 5px;">
+										<label value="&OptionsLabel17.label;"/>
+										<label value="&OptionsLabel18.label;"/>
+									</row>
+									<row >
+										<checkbox id="cbnocookie" label="&OptionsLabel19.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnocookie');" accesskey="C"  preference="nocookie"/>
+										<label id="a1" class="text-link" onclick="isisNoTrace.openNewWindow('nocookie','&OptionsLabel19.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<row >
+										<checkbox id="cbnoidheader" label="&OptionsLabel20.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnoidheader')" accesskey="H" preference="noidheader"/>
+										<label id="a7" class="text-link" onclick="isisNoTrace.openNewWindow('noidheader','&OptionsLabel20.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<row >
+										<checkbox id="cbnojscookie" label="&OptionsLabel21.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnojscookie')" preference="nojscookie"/>
+										<label id="a6" class="text-link" onclick="isisNoTrace.openNewWindow('nojscookie','&OptionsLabel21.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<row >
+										<checkbox id="cbnometaredirectandcookie" label="&OptionsLabel22.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnometaredirectandcookie')" preference="nometaredirectandcookie"/>
+										<label id="a9" class="text-link" onclick="isisNoTrace.openNewWindow('nometaredirectandcookie','&OptionsLabel22.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<!--<row >
+										<checkbox id="cbnometaredirect" label="&OptionsLabel23.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnometaredirect')"   preference="nometaredirect"/>
+										<label id="a8" class="text-link" onclick="isisNoTrace.openNewWindow('nometaredirect','&OptionsLabel23.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>-->
+									<row >
+										<checkbox id="cbnoimg" label="&OptionsLabel24.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnoimg')" accesskey="I" preference="noimg"/>
+										<label id="a3" class="text-link" onclick="isisNoTrace.openNewWindow('noimg','&OptionsLabel24.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<row >
+										<checkbox id="cbnojs" label="&OptionsLabel25.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnojs')" accesskey="J" preference="nojs"/>
+										<label id="a2" class="text-link" onclick="isisNoTrace.openNewWindow('nojs','&OptionsLabel25.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<row >
+										<checkbox id="cbnonoscript" label="&OptionsLabel27.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnonoscript')" accesskey="S"  preference="nonoscript"/>
+										<label id="a5" class="text-link" onclick="isisNoTrace.openNewWindow('nonoscript','&OptionsLabel27.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+								</rows>	
+							</grid> 
+							<label id="clear1" class="text-link" onclick="isisNoTrace.deleteAllResourcesFromDB();" style="text-decoration:underline;color:blue;" value="&deleteallresources.label;" />
+						</vbox>
+					</box>
+				</tabpanel>
+				<tabpanel id="panetracking">
+					<preferences id="preftracking">
+						<preference id="no3js" type="bool" name="extensions.notrace.technique.no3js"/>
+						<preference id="no3img" type="bool" name="extensions.notrace.technique.no3img"/>
+						<preference id="nowebbug" type="bool" name="extensions.notrace.technique.nowebbug"/>
+						<preference id="no3cookie" type="bool" name="extensions.notrace.technique.no3cookie"/>
+						<!--<preference id="notop" type="bool" name="extensions.notrace.technique.notop"/>-->
+						<preference id="noflashcookie" type="bool" name="extensions.notrace.technique.noflashcookie"/>
+						<preference id="no3hiddenobj" type="bool" name="extensions.notrace.technique.no3hiddenobj"/>
+						<preference id="noadnetwcookie" type="bool" name="extensions.notrace.technique.noadnetwcookie"/>
+					</preferences>
+					<box orient="vertical">
+						<vbox>
+							<description>&OptionsLabel28.label;</description>
+							<description class="descriptionText">
+								&OptionsLabel29.label;
+							</description>
+							<grid flex="1" class="nopad_nomarg">
+								<columns>
+									<column flex="3" />
+									<column flex="1" />
+									<column flex="1" />	
+								</columns>
+								<rows>
+									<row style="font-weight:bold;padding: 5px;">
+										<label value="&OptionsLabel17.label;"/>
+										<label value="&OptionsLabel18.label;"/>
+									</row>
+									<row id="n3jsrow">
+										<checkbox id="cbno3js" onclick="isisNoTrace.calcolaGlobalb2('cbno3js')" label="&OptionsLabel30.label;"  preference="no3js"/>
+										<label id="a11-1" class="text-link" onclick='isisNoTrace.openNewWindow("no3js","&OptionsLabel30.label;");' style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<row id="n3imgrow">
+										<checkbox id="cbno3img" label="&OptionsLabel31.label;" onclick="isisNoTrace.calcolaGlobalb2('cbno3img')" accesskey="I" preference="no3img"/>
+										<label id="a12-2" class="text-link" onclick="isisNoTrace.openNewWindow('no3img','&OptionsLabel31.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<row id="nwebbugrow">
+										<checkbox id="cbnowebbug" label="&OptionsLabel32.label;" onclick="isisNoTrace.calcolaGlobalb2('cbnowebbug')" preference="nowebbug"/>
+										<label id="a16-2" class="text-link" onclick="isisNoTrace.openNewWindow('nowebbug','&OptionsLabel32.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<row id="n3crow">
+										<checkbox id="cbno3cookie" onclick="isisNoTrace.calcolaGlobalb2('cbno3cookie')" label="&OptionsLabel33.label;" accesskey="C" preference="no3cookie"/>
+										<label id="a14-1" class="text-link" onclick="isisNoTrace.openNewWindow('no3cookie','&OptionsLabel33.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>
+									<!--<row id="notoprow">
+										<checkbox id="cbnotop" onclick="isisNoTrace.calcolaGlobalb2('cbnotop')" label="&OptionsLabel34.label;" accesskey="T" preference="notop"/>
+										<label id="a15" class="text-link" onclick="isisNoTrace.openNewWindow('notop','&OptionsLabel34.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									</row>-->
+									<row id="noflashrow">
+										<checkbox id="cbnoflashcookie" onclick="isisNoTrace.flashcookie();" label="&OptionsLabel35.label;" accesskey="F" preference="noflashcookie"/>
+										<!--<label id="a11"  style="color:blue;" value="0" />-->
+										<!--class="text-link" onclick="isisNoTrace.openNewWindow('noflashcookie','&OptionsLabel35.label;');" style="text-decoration:underline;"-->
+									</row>
+									<row id="no3hiddenobjrow">
+										<checkbox id="cbno3hiddenobj" onclick="isisNoTrace.calcolaGlobalb2('cbno3hiddenobj')" label="&OptionsLabel36.label;" preference="no3hiddenobj"/>
+										<label id="a20" class="text-link" onclick="isisNoTrace.openNewWindow('no3hiddenobj','&OptionsLabel36.label;');" style="text-decoration:underline;color:blue;" value="0" />
+										<!--<button id="advancedHiddenScript" label="&OptionsLabel37.label;" oncommand="isisNoTrace.openDialogHiddenScript();" height="24"></button>-->
+									</row>
+									<row id="noadnetwcookierow">
+										<checkbox id="cbnoadnetwcookie" oncommand="isisNoTrace.openDialogOptoutList();" label="&OptionsLabel38.label;" accesskey="a" preference="noadnetwcookie"/>
+										<!--<label id="a130" style="color:blue;" value="0" />-->
+										<!--<button id="advancedOptOutList" label="&OptionsLabel37.label;" oncommand="isisNoTrace.openDialogOptoutList();" height="25"></button>-->
+									</row>
+									<row id="nohtml5storagerow">
+										<checkbox id="cbnohtml5storage" oncommand="isisNoTrace.deleteAllFromLocalStorage();" label="&OptionsLabel58.label;" preference="nohtml5storage"/>
+										<!--<label id="a999" style="color:blue;" value="0" />-->
+										<button id="advancedhtml5storage" label="&OptionsLabel59.label;" oncommand="isisNoTrace.openHTML5Window();" height="24"></button>
+									</row>
+								</rows>
+							</grid>
+							<groupbox id="hiddenScript-group" style="display:none;"></groupbox>
+							<groupbox id="optOutList-group" ></groupbox> <!--style="display:none;"-->
+							<label id="clear2" class="text-link" onclick="isisNoTrace.deleteAllResourcesFromDB();" style="text-decoration:underline;color:blue;" value="&deleteallresources.label;" />
+						</vbox>
+					</box>	
+				</tabpanel>
+				<tabpanel id="paneannoying">
+					<preferences id="prefannoying">
+						<preference id="no3pe" type="bool" name="extensions.notrace.technique.no3pe"/>				
+						<preference id="no3objnoid" type="bool" name="extensions.notrace.technique.no3objnoid"/>
+						<preference id="nofingerprinting" type="bool" name="extensions.notrace.technique.nofingerprinting"/>
+						<preference id="noad" type="bool" name="extensions.notrace.technique.noad"/>
+					</preferences>
+					<vbox>
+						<description>&OptionsLabel39.label;</description>			
+						<description class="descriptionText">
+							&OptionsLabel40.label;
+						</description>
+						<grid flex="1" class="nopad_nomarg">
+							<columns>
+								<column flex="3" />
+								<column flex="1" />
+							</columns>
+							<rows>
+								<row style="font-weight:bold;padding: 5px;">
+									<label value="&OptionsLabel17.label;" />
+									<label value="&OptionsLabel18.label;"/>
+								</row>
+								<row >
+									<checkbox id="cbno3pe" onclick="isisNoTrace.calcolaGlobalb2('cbno3pe')" label="&OptionsLabel41.label;" preference="no3pe"/>
+									<label id="a4" class="text-link" onclick="isisNoTrace.openNewWindow('no3pe','&OptionsLabel41.label;');" style="text-decoration:underline;color:blue;" value="0" />
+								</row>
+								<row >
+									<checkbox id="cbno3objnoid" onclick="isisNoTrace.calcolaGlobalb2('cbno3objnoid')" label="&OptionsLabel42.label;" preference="no3objnoid"/>
+									<label id="a13" class="text-link" onclick="isisNoTrace.openNewWindow('no3objnoid','&OptionsLabel42.label;');" style="text-decoration:underline;color:blue;" value="0" />
+								</row>
+								<row >
+									<checkbox id="cbnoad" onclick="isisNoTrace.calcolaGlobalb2('cbnoad')" accesskey="A" label="&OptionsLabel43.label;" preference="noad"/>
+									<label id="a10" class="text-link" onclick="isisNoTrace.openNewWindow('noad','&OptionsLabel43.label;');" style="text-decoration:underline;color:blue;" value="0" />
+									<button id="advancedNoAds" label="&OptionsLabel37.label;" oncommand="isisNoTrace.openDialogAdList();"></button>
+								</row>
+								<row style="margin: 10px;">
+									<checkbox id="cbnofingerprinting" onclick="isisNoTrace.calcolaGlobalb2('cbnofingerprinting')" label="&OptionsLabel73.label;" preference="nofingerprinting"/>
+									<label id="a14" class="text-link" onclick="isisNoTrace.openNewWindow('nofingerprinting','&OptionsLabel73.label;');" style="text-decoration:underline;color:blue;" value="0" />
+								</row>
+							</rows>
+						</grid>   
+						<groupbox id="noAds-group" style="display:none;"></groupbox>
+						<label id="clear3" class="text-link" onclick="isisNoTrace.deleteAllResourcesFromDB();" style="text-decoration:underline;color:blue;" value="&deleteallresources.label;" />
+					</vbox>
+				</tabpanel> 
+			</tabpanels>
+		</tabbox>
+	</prefpane>		
+	<prefpane id="panewl" label="&OptionsLabel44.label;" image="imgs/lists.png" onpaneload="isisNoTraceShare.isisNoTraceSharedObjects.whitelist.initwhitelist();" flex="1">
+		<tabbox>
+			<tabs>
+				<tab label="&OptionsLabel45.label;" style = "font-weight:bold"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel id="whitelistTabPanel">	
+					<vbox flex="1">
+						<description style="white-space: normal; width: 23em" id="permissionsText">&OptionsLabel46.label;
+						</description>
+						<separator class="thin"/>
+						<label control="urlText" value="&OptionsLabel47.label;"/>  
+						<grid width="300">
+							<columns>
+							  <column flex="1"/>
+							</columns>
+							<rows>
+								<row>
+									<hbox align="center">
+										<textbox id="newitemwl" size="66"/><spacer flex="1" />
+										<button label="&OptionsLabel48.label;" oncommand="isisNoTraceShare.isisNoTraceSharedObjects.whitelist.addOptions();"/>
+									</hbox>
+								</row>
+								<groupbox>
+									<listbox id="nt-whitelist" seltype="multiple">
+									</listbox>
+									<box>
+										<button label="&OptionsLabel49.label;" oncommand="isisNoTrace.importWhiteList();"></button>
+										<spacer flex="1" /><spacer flex="1" /><spacer flex="1" />
+										<button label="&OptionsLabel50.label;" oncommand="isisNoTraceShare.isisNoTraceSharedObjects.whitelist.remove();"/>
+									</box>		
+								</groupbox>
+							</rows>
+						</grid>
+					</vbox>		
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</prefpane>
+	<prefpane id="share" label="&OptionsLabel60.label;" image="imgs/share.png" flex="1" onpaneload="isisNoTrace.initsharepane(null);">	
+		<tabbox>
+			<tabs>		
+				<tab label="&OptionsLabel61.label;" style = "font-weight:bold" />
+			</tabs>
+			<tabpanels>
+				<tabpanel id="shareTabID">
+					<groupbox id="nt-sharePage" style="width:630px;">
+						<vbox id="nt-aboutPage" flex="4">
+							<hbox align="baseline">
+								<image id="about_logo" src="imgs/NoTrace_logo.png"/>
+								<description class="titleh1" multiline="true" id="nt-title"></description>
+							</hbox>
+							<hbox align="baseline">
+								<label class="boldh1" control="version" value="&OptionsLabel61.label;"/>
+								<!--<textbox id="nt-version" flex="4" class="plain" readonly="true" tabindex="-1"/>-->
+							</hbox>          
+							<groupbox id="mainGroup" flex="4" class = "box_desc">
+								<vbox align="baseline">
+									<!--label class="boldh2" value="asdasd"/-->
+									<description multiline="true" id="nt-statistics" class="marginleft20">&OptionsLabel66.label;</description>
+							   </vbox>
+							   <radiogroup id="feedbackgroup">
+									<radio label="&OptionsLabel62.label;" id="type0" name="type" value="1" onclick="isisNoTrace.changeRadioButton(null);"/>
+									<radio label="&OptionsLabel63.label;" id="type1" name="type" value="0" onclick="isisNoTrace.changeRadioButton(true);"/>
+							   </radiogroup>
+							   <!--
+							   groupbox id="mainDesc" flex="4" class = "box_desc" style="display:none;">
+									<description id="submissionType" class="boldh2"></description>
+									<vbox align="baseline">
+										<description multiline="true" id="submissionDetails" class="marginleft20"></description>
+									</vbox>
+								</groupbox
+								-->
+								<vbox>
+									<hbox>
+										<checkbox id="chb_feedback" label="&OptionsLabel64.label;"/>
+										<label id="feedback-dest" value="&OptionsLabel65.label;"/>
+									</hbox>
+								</vbox>
+								<!--<vbox>
+									<hbox>
+										<label id="feedback-lbl1" value="&OptionsLabel71.label;"/>
+										<textbox id="feedbacktimeinterval"  type="number" min="1" max="30" increment="1" value="7"/>
+										<label id="feedback-lbl2" value="&OptionsLabel72.label;"/>
+									</hbox>
+								</vbox>-->
+							</groupbox>
+						</vbox>
+						<vbox flex="4" >
+							<label class="boldh2" value="&OptionsLabel70.label;"/>
+							<tree id="feedback-treeid" flex="4" rows="6">
+								<treecols>
+									<treecol id="feedback-treecolid" label="&OptionsLabel67.label;" primary="true" flex="4"/>
+									<treecol id="feedback-treecolname" label="&OptionsLabel68.label;" flex="4"/>
+									<treecol id="feedback-treecolvalue" label="&OptionsLabel69.label;" flex="4"/>
+								</treecols>
+								<treechildren id="feedback-list" flex="4"/>
+							</tree>
+						</vbox>
+					</groupbox>
+				</tabpanel>	
+			</tabpanels>
+		</tabbox>
+	</prefpane>
+	<prefpane id="help" label="&OptionsLabel51.label;" image="imgs/help.png" flex="1">	
+		<tabbox>
+			<tabs>		
+				<tab label="&OptionsLabel52.label;" style = "font-weight:bold" />
+			</tabs>
+			<tabpanels>
+				<tabpanel id="helpLegendID">
+					<groupbox id="nt-aboutPage" style="width:530px;">
+						<hbox align="baseline">
+							<image id="about_logo" src="imgs/NoTrace_logo.png"/>
+							<description class="titleh1" multiline="true" id="nt-title"></description>
+						</hbox>
+						<hbox id="hbox_to_modify" align="baseline" style="width:530px;">
+							<label class="boldh2" control="version" value="&OptionsLabel53.label;"/>
+							<textbox id="nt-version" flex="1" class="plain" readonly="true" tabindex="-1"/>
+						</hbox>		   
+						<groupbox id="mainGroup" flex="1" class = "box_desc">
+							<description id="nt-description"></description>
+							<vbox align="baseline">
+								<label class="boldh2" value="&OptionsLabel54.label;"/>
+								<!--<description multiline="true" id="nt-homepage" class="text-link marginleft20"></description>-->
+								<label id="nt-homepage" href="http://example.com" class="text-link" value=""/>
+							</vbox>
+							<vbox id="creatorBox" align="top">
+								<label class="boldh2" id="creatorTitle" value="&OptionsLabel55.label;"/>
+								<description multiline="true" id="nt-author" class="marginleft20"/>
+							</vbox>
+							<vbox id="authorsBox" align="top">
+								<label class="boldh2" id="authorsTitle" value="&OptionsLabel56.label;"/>
+								<description multiline="true" id="nt-developers" class="marginleft20"/>
+							</vbox>
+							<vbox id="contributorsBox" align="top">
+								<label class="boldh2" id="contributorsTitle" value="&OptionsLabel57.label;"/>
+								<description multiline="true" id="nt-contributors" class="marginleft20"/>
+							</vbox>
+						</groupbox>
+					</groupbox>
+				</tabpanel>	
+			</tabpanels>
+		</tabbox>
+	</prefpane>
+	<label id="tech" hidden="true" value=""/>
+	<label id="tech2" hidden="true" value=""/>
+</prefwindow>

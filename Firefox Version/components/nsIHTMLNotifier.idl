@@ -1,0 +1,8 @@
+#include "nsISupports.idl"
+
+[scriptable, uuid(CD18915E-3D23-11DC-A377-CD5E56D89593)]
+interface nsIHTMLNotifier : nsISupports{
+  
+	void submitHTML(in string HTML);
+	string getRequestHost();
+};

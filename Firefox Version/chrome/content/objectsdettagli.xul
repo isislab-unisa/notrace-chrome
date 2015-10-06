@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://notrace/locale/objectsdettagli.dtd">
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<window title="&ObjectDettagli.title;"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		onload="isisNoTrace.vai()">
+
+	<script type="application/x-javascript" src="objectsdettagli.js" />
+	
+
+	<label value="&ObjectDettagliLocation.label;"/>
+	<textbox id="notraceaddons-location" value=""/>
+		
+	<label value="&ObjectDettagliResource.label;"/>
+	<textbox id="notraceaddons-resource" multiline="true" value="" rows="20"/>
+
+	<box align="right">
+		<button label="&ObjectDettagliOK.label;" oncommand="window.close();"/>
+	</box>
+</window>
