@@ -1,6 +1,7 @@
 var tabUrl = null;
 var tabs = {};
 var selectedTab = null;
+var refreshed = false;
 
 chrome.runtime.onInstalled.addListener(function(details) {
     localStorage['numeroElementi'] = 0;
@@ -30,18 +31,6 @@ chrome.runtime.onMessage.addListener (
 
 // In alcuni casi chrome.tabs può non essere definito (crbug.com/60435), quindi controlliamo che esista
 if (chrome.tabs) {
-    chrome.tabs.query({}, function(results) {
-        results.forEach(function(tab) {
-            /* Dobbiamo avere due contatori per ogni tab, uno che conta i tracciamenti evitati,
-             * l'altro conta le pubblicità bloccate. Dobbiamo agire così perchè, in base al tab selezionato,
-             * dobbiamo mostrare IN QUELLA PAGINA quante minacce sono state evitate.
-             */
-            tabs[tab.id] = new Array(0, 0);
-            });
-        chrome.tabs.query({active: true, currentWindow: true}, function (tabarray) { // Al momento dell'attivazione dell'estensione devo prendere il tab corrente
-            selectedTab = tabarray[0].id; // Il tab corrente è il primo dell'array tabarray
-        });
-    });
     chrome.tabs.onRemoved.addListener(function (tabId) {
         delete tabs[tabId];
     });
@@ -63,11 +52,20 @@ if (chrome.tabs) {
             chrome.browserAction.setBadgeText({text: ''});
         }
     });
-    chrome.tabs.onUpdated.addListener(function (tabId) {
-         chrome.browserAction.setBadgeText({text: ''});
+    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+        if (changeInfo.status == 'loading') {
+            if (!refreshed) {
+                tabs[tabId] = new Array(0, 0);
+                clearBlockedObject();
+                chrome.browserAction.setBadgeText({text: ''});
+                refreshed = true;
+            }
+        }
+        else if (changeInfo.status == 'complete') {
+            refreshed = false;
+        }
     });
 }
-
 chrome.webRequest.onBeforeRequest.addListener(function (details) {
     /* CONTROLLO LE TECNICHE APPLICABILI TRA: 
     /* notop:					filtra le richieste ai top-10 domini di terze parti;
@@ -77,7 +75,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
     /* no3img:					cancella richieste di immagini verso siti di terze parti
     /* no3hiddenobj:			rimuove le esecuzioni di Javascript di reti di advertisement
     /* */
-    
+
     if (localStorage['noTraceSospeso'] === 'false' && details.tabId != -1) {
         // Salvo l'URL della pagina, così come viene mostrato nella barra
         // degli indirizzi del tab dal quale è partita la richiesta.
@@ -95,8 +93,6 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
             // della richiesta coincide col dominio della pagina presente nel
             // tab visualizzato.
             tabUrl = details.url; // L'URL del tab sarebbe quello di richiesta del main_frame
-            tabs[details.tabId] = new Array(0, 0);
-            clearBlockedObject();
         }
     
         /* CONTROLLI PRESENZA URL IN WHITELIST O BLACKLIST */
@@ -105,24 +101,6 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
         if (isInWhiteList(getDomainFromUrl(tabUrl))) {
             return {cancel: false};
         } 
-        
-        /*if (details.type == "script") {
-            var xmlHttp = getXMLHttpRequest();
-            var url = details.url;
-            
-            if (xmlHttp != null) {
-                xmlHttp.onreadystatechange = function () {
-                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                        if (xmlHttp.responseText.search("location") != -1) {
-                            
-                        }
-                    }
-                }
-                xmlHttp.open("GET", url, false);
-                xmlHttp.send(null);
-            }
-            return {cancel: true}
-        }*/
 
         // La prima funzione controlla se la tecnica è abilitata, la seconda la applica
         if (isNotop() && notop(details)) {
